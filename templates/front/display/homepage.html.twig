@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Défi-Delf{% endblock %}
+
+{% block body %}
+
+    <main>
+        <section class="mt-5 py-5">
+            <div class="container">
+                <div class="row mt-5 pt-5 gy-4 align-items-center">
+                    <div class="col-12 col-md-6">
+                        <h1 class="text-center fw-bold text-uppercase text-primary mb-4 mb-md-0">Présentation - Projet pédagogique</h1>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <h2 class="text-center">Défi-Delf, une nouvelle association insérée dans le paysage aubois</h2>
+                        <p class="my-4">Fondée en janvier 2023, notre association à but non lucratif est le fruit de l'engagement d’une équipe de bénévoles, aux profils et expériences variés : salariés en activité, anciens éducateurs, assistants sociaux, responsables associatifs ou enseignants à la retraite, étudiants de l’Inspé. Elle s’adresse à des adultes étrangers allophones.</p>
+                        <h2 class="text-center">Cours en soirée pour des adultes étrangers très motivés</h2>
+                        <p class="my-4">Notre mission principale, basée sur le volontariat des « apprenants » étrangers, est de favoriser l'insertion sociale, professionnelle et culturelle par l'apprentissage de la langue française, à la fois orale et écrite. Grâce au partenariat avec l’institut national supérieur du professorat et de l'éducation (Inspé), nos cours sont proposés, en début de soirée, trois fois par semaine, pour s’adapter aux salariés et à ceux qui ont des emplois du temps chargés.</p>
+                        <h2 class="text-center">Une pédagogie active</h2>
+                        <p class="my-4">Nous nous efforçons de fournir une formation de qualité, axée sur la participation active et l'interaction entre les apprenants. Pour ce faire, nous utilisons des méthodes pédagogiques actives, favorisant ainsi un apprentissage dynamique et stimulant.
+                            Les visites organisées ou l’analyse de documents authentiques permettent une immersion culturelle et renforce ainsi la compréhension de la société française et de ses valeurs.
+                            De plus, nous intégrons l'utilisation d'outils informatiques afin de maximiser l'efficacité de notre enseignement.</p>
+                        <h2 class="text-center">Des évaluations fiables et reconnues</h2>
+                        <p class="my-4">Les résultats de ces tests fournis par FEI, permettent aux apprenants d'obtenir une évaluation externe et de qualité, offrant une validation tangible de leur progression et des progrès attendus.
+                            Ils permettent d’avoir une évaluation objective assurée par un organisme agréé et de mettre en place des modules de formation adaptés.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row pt-5 gy-4 align-items-center">
+                    <div class="col-12 col-md-6 order-2 order-md-0">
+                   
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <h1 class="text-center fw-bold text-uppercase text-primary mb-4 mb-md-0 order-1">L'équipe</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-5">
+            <div class="container">
+                <div class="row pt-5 gy-4 align-items-center">
+                    <div class="col-12 col-md-6">
+                        <h1 class="text-center fw-bold text-uppercase text-primary mb-4 mb-md-0">Témoignages</h1>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <img src="{{ asset('images/temoignage_mercy.jpg') }}" class="border rounded-circle mx-auto d-block float-md-end" height="90" width="90" alt="photo de Mercy">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <p class="fst-italic">"Grâce à l'entraînement, je comprends mieux les épreuves du DELF, je me sens moins stressée."</p>
+                                <p class="text-end text-info"><span class="fw-bold">Mercy</span> (Cameroun)</p>
+                            </div>
+                        </div>
+                        <div class="row mt-4 p-4">
+                            <div class="col-12 col-md-3">
+                                <img src="{{ asset('images/temoignage_amina.jpg') }}" class="border rounded-circle mx-auto d-block float-md-start" height="90" width="90" alt="photo de Amina">
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <p class="fst-italic">"Les épreuves d'entraînement m'ont permis aussi d'être en conditions réelles d'examen."</p>
+                                <p class="text-end text-info"><span class="fw-bold">Amina</span> (Maroc)</p>
+                            </div>
+                        </div>
+                        <div class="row mt-4 p-4">
+                            <div class="col-12 col-md-6">
+                                <img src="{{ asset('images/temoignage_abdulhamid.jpg') }}" class="border rounded-circle mx-auto d-block float-md-end" height="90" width="90" alt="photo de Abdulhamid">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <p class="fst-italic">"Mes résultats à la préparation me donnent confiance pour le DELF."</p>
+                                <p class="text-end text-info"><span class="fw-bold">Abdulhamid</span> (Afghanistan)</p>
+                            </div>
+                        </div>
+                        <div class="row mt-4 p-4">
+                            <div class="col">
+                                <p class="fst-italic">"C'est important de bien se préparer, avant le grand jour, pour être moins nerveux."</p>
+                                <p class="text-end text-info"><span class="fw-bold">Ganimete</span> (Kosovo)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row pt-5 gy-4 align-items-center">
+                    <div class="col-12 col-md-6 order-2 order-md-0">
+                        <h3>France info</h3>
+                        <p><a href="https://france3-regions.francetvinfo.fr/grand-est/aube/troyes/60-migrants-s-entrainent-pour-passer-le-diplome-d-etudes-en-langues-francaises-la-loi-sur-l-immigration-met-la-pression-sur-le-niveau-de-francais-2907773.html">60 migrants s’entrainent pour passer le diplôme d’études en langues françaises, "la loi sur l’immigration met la pression sur le niveau de français"</a></p>
+                        <h3 class="mt-5">L'Est éclair</h3>
+                        <img src=".{{ asset('images/journal_15-10-2023.jpg') }}" width="100%" alt="">
+                    </div>
+                    <div class="col-12 col-md-6 order-1">
+                        <h1 class="text-center fw-bold text-uppercase text-primary mb-4 mb-md-0">La presse parle de nous</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}

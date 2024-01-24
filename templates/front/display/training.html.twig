@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Séances d'entraînement{% endblock %}
+
+{% block body %}
+
+    <main>
+        <div class="container mt-5 pt-5">
+            <div class="row my-5 pt-5 align-items-center">
+                <div class="col-12 col-md-5">
+                    <h1 class="fw-bold text-uppercase text-center text-success">Inscription aux séances d'entraînement</h1>
+                    <p class="mt-4 text-center">Pour participer aux sessions d'entraînement du DELF, merci de bien vouloir remplir ce formulaire.
+                        <br>Nous reviendrons vers vous pour confirmation.
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 offset-md-1">
+                    <form action="" class="row gy-4">
+                        <div class="col-6">
+                            <label for="firstname" class="form-label">Prénom</label>
+                            <input type="text" class="form-control" name="firstname" id="firstname">
+                        </div>
+                        <div class="col-6">
+                            <label for="lastname" class="form-label">Nom</label>
+                            <input type="text" class="form-control" name="lastname" id="lastname">
+                        </div>
+                        <div class="col-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" class="form-control" name="email" id="email">
+                        </div>
+                        <div class="col-6">
+                            <label for="telephone" class="form-label">Téléphone</label>
+                            <input type="text" class="form-control" name="telephone" id="telephone">
+                        </div>
+                        <div class="col-12">
+                            <label for="nationalite" class="form-label">Nationalité</label>
+                            <input type="text" class="form-control" name="nationalite" id="nationalite">
+                        </div>
+                        <div class="col-12">
+                            <label for="adresse" class="form-label">Adresse</label>
+                            <input type="text" class="form-control" name="adresse" id="adresse">
+                        </div>
+                        <div class="col-12">
+                            <label for="infos" class="form-label">Informations complémentaires sur l'adresse</label>
+                            <input type="text" class="form-control" name="infos" id="infos">
+                        </div>
+                        <div class="col-6">
+                            <label for="code" class="form-label">Code postal</label>
+                            <input type="text" class="form-control" name="code" id="code">
+                        </div>
+                        <div class="col-6">
+                            <label for="ville" class="form-label">Ville</label>
+                            <input type="text" class="form-control" name="ville" id="ville">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary w-100">Envoyer</button>
+                        </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}
