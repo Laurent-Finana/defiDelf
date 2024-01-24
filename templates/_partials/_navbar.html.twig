@@ -1,0 +1,29 @@
+
+        <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="{{ path('app_homepage') }}"><img src="{{ asset('assets/images/logo-simple.png') }}" alt="logo défi DELF" width="150" height="150"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a href="{{ path('app_homepage') }}" class="nav-link" aria-expanded="false">Qui sommes-nous ?</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="{{ path('app_actions') }}" class="nav-link" aria-expanded="false">Nos actions
+                            </a>
+                        </li>
+                        <li class="nav-item active"><a href="{{ path('app_displayTraining') }}" class="nav-link">Séances d'entraînement</a></li>
+                        <li class="nav-item active"><a href="#events" class="nav-link">Evènements</a></li>
+                        <li class="nav-item active"><a href="#partner" class="nav-link">Partenaires</a></li>
+                        <li class="nav-item active"><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse justify-content-end" id="navabarTogglerButton">
+                    <a href="" class="nav-link text-secondary border border-secondary rounded p-1">Accès membre</a>
+                </div>
+            </div>
+        </nav>
+    </header>
