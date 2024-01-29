@@ -6,33 +6,21 @@
 
 <main>
 
-  <section class="mt-5 py-5 text-center container">
-    <div class="row mt-5 py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Galerie photos</h1>
-        <p class="lead text-body-secondary">Retrouvez ici quelques instants captés lors de cours, remise des diplômes, sorties culturelles...</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="album py-5 bg-body-tertiary">
-    <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">          
-        {% for photo in photos %}
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="{{ asset('assets/photos/defidelf' ~ photo ~ '.jpg') }}" alt="photo" />
-                        <div class="card-body">
-                        <p class="card-text">Cours texte de présentation de la photo (facultatif).</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <small class="text-body-secondary">25.01.2024</small>
-                        </div>
+  <section class="mt-5 py-5 bg-light">
+            <div class="container">
+                <div class="row mt-5 pt-5 gy-4 align-items-center">
+                    <div class="col-12 col-md-6 order-2 order-md-0">
+                        <h3>France info</h3>
+                        <p><a href="https://france3-regions.francetvinfo.fr/grand-est/aube/troyes/60-migrants-s-entrainent-pour-passer-le-diplome-d-etudes-en-langues-francaises-la-loi-sur-l-immigration-met-la-pression-sur-le-niveau-de-francais-2907773.html">60 migrants s’entrainent pour passer le diplôme d’études en langues françaises, "la loi sur l’immigration met la pression sur le niveau de français"</a></p>
+                        <h3 class="mt-5">L'Est éclair</h3>
+                        <img src="{{ asset('assets/images/journal_15-10-2023.jpg') }}" width="100%" alt="">
+                    </div>
+                    <div class="col-12 col-md-6 order-1">
+                        <h1 class="text-center fw-bold text-uppercase text-primary mb-4 mb-md-0">La presse parle de nous</h1>
                     </div>
                 </div>
             </div>
-        {% endfor %}
-    </div>
-  </div>
+        </section>
 
 </main>
 

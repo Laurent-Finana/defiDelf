@@ -1,11 +1,62 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Séances d'entraînement{% endblock %}
+{% block title %}Session DELF{% endblock %}
 
 {% block body %}
 
     <main>
-        <div class="container mt-5 pt-5">
+        <section class="mt-5 pt-5 text-center container">
+            <div class="mt-5 pt-5">
+                <h1>Présentation</h1>
+                <p class="pt-2">Texte de présentation Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus odio adipisci iusto beatae culpa ipsa dolorem eligendi reprehenderit nobis natus cumque quod quam, voluptatem amet.
+                </p>
+            </div>
+        </section>
+        <section class="py-5">
+            <div class="container">
+                <div class="row pt-5 gy-4 align-items-center">
+                    <div class="col-12 col-md-6">
+                        <h1 class="text-center fw-bold text-uppercase text-primary mb-4 mb-md-0">Témoignages</h1>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <img src="{{ asset('assets/images/temoignage_mercy.jpg') }}" class="border rounded-circle mx-auto d-block float-md-end" height="90" width="90" alt="photo de Mercy">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <p class="fst-italic">"Grâce à l'entraînement, je comprends mieux les épreuves du DELF, je me sens moins stressée."</p>
+                                <p class="text-end text-info"><span class="fw-bold">Mercy</span> (Cameroun)</p>
+                            </div>
+                        </div>
+                        <div class="row mt-4 p-4">
+                            <div class="col-12 col-md-3">
+                                <img src="{{ asset('assets/images/temoignage_amina.jpg') }}" class="border rounded-circle mx-auto d-block float-md-start" height="90" width="90" alt="photo de Amina">
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <p class="fst-italic">"Les épreuves d'entraînement m'ont permis aussi d'être en conditions réelles d'examen."</p>
+                                <p class="text-end text-info"><span class="fw-bold">Amina</span> (Maroc)</p>
+                            </div>
+                        </div>
+                        <div class="row mt-4 p-4">
+                            <div class="col-12 col-md-6">
+                                <img src="{{ asset('assets/images/temoignage_abdulhamid.jpg') }}" class="border rounded-circle mx-auto d-block float-md-end" height="90" width="90" alt="photo de Abdulhamid">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <p class="fst-italic">"Mes résultats à la préparation me donnent confiance pour le DELF."</p>
+                                <p class="text-end text-info"><span class="fw-bold">Abdulhamid</span> (Afghanistan)</p>
+                            </div>
+                        </div>
+                        <div class="row mt-4 p-4">
+                            <div class="col">
+                                <p class="fst-italic">"C'est important de bien se préparer, avant le grand jour, pour être moins nerveux."</p>
+                                <p class="text-end text-info"><span class="fw-bold">Ganimete</span> (Kosovo)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container">
             <div class="row my-5 pt-5 align-items-center">
                 <div class="col-12 col-md-5">
                     <h1 class="fw-bold text-uppercase text-center text-success">Inscription aux séances d'entraînement</h1>
