@@ -5,10 +5,10 @@ import './bootstrap.js';
  * This file will be included onto the page via the importmap() Twig function,
  * which should already be in your base.html.twig.
  */
-import './styles/app.css';
+import './styles/scss/app.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import 'bootstrap/bootstrap.index.js';
 
 // ...
 
