@@ -6,19 +6,19 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item {% if (app.request.attributes.get('_route') == 'app_presentation') %} active {% endif %}">
-                            <a href="{{ path('app_presentation') }}" class="nav-link" aria-expanded="false">Qui sommes-nous ?</a>
+                        <li class="nav-item">
+                            <a href="{{ path('app_presentation') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_presentation') %} text-white border-top border-white {% endif %}" aria-expanded="false">Qui sommes-nous ?</a>
                         </li>
-                        <li class="nav-item {% if (app.request.attributes.get('_route') == 'app_actions') %} active {% endif %}">
-                            <a href="{{ path('app_actions') }}" class="nav-link" aria-expanded="false">Nos actions
+                        <li class="nav-item">
+                            <a href="{{ path('app_actions') }}" class="nav-link  {% if (app.request.attributes.get('_route') == 'app_actions') %} text-white border-top border-white {% endif %}" aria-expanded="false">Nos actions
                             </a>
                         </li>
-                        <li class="nav-item {% if (app.request.attributes.get('_route') == 'app_displayTraining') %} active {% endif %}"><a href="{{ path('app_displayTraining') }}" class="nav-link">Sessions DELF</a></li>
-                        <li class="nav-item {% if (app.request.attributes.get('_route') == 'app_events') %} active {% endif %}"><a href="{{ path('app_events') }}" class="nav-link">Evènements</a></li>
-                        <li class="nav-item {% if (app.request.attributes.get('_route') == 'app_partners') %} active {% endif %}"><a href="#partner" class="nav-link">Partenaires</a></li>
-                        <li class="nav-item {% if (app.request.attributes.get('_route') == 'app_contact') %} active {% endif %}"><a href="#contact" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="{{ path('app_displayTraining') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_displayTraining') %} text-white border-top border-white {% endif %}">Sessions DELF</a></li>
+                        <li class="nav-item"><a href="{{ path('app_events') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_events') %} text-white border-top border-white {% endif %}">Evènements</a></li>
+                        <li class="nav-item"><a href="#partner" class="nav-link {% if (app.request.attributes.get('_route') == 'app_partners') %} text-white border-top border-white {% endif %}">Partenaires</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link {% if (app.request.attributes.get('_route') == 'app_contact') %} text-white border-top border-white {% endif %}">Contact</a></li>
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse justify-content-end" id="navabarTogglerButton">
