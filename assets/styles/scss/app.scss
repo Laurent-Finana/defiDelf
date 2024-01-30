@@ -3,7 +3,7 @@ nav, footer {
 }
 
 main {
-    background-color: #a2def9;
+    background-color: rgb(255, 225, 225);
 }
 
 main h1 {
@@ -11,7 +11,15 @@ main h1 {
 }
 
 main h2 {
-    color: #fffccb;
+    color: #7c8883;
+}
+
+.nav-item a:hover {
+    color: white;
+}
+
+.active a{
+    color: white;
 }
 
 .card {
