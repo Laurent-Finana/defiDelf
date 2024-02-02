@@ -35,4 +35,16 @@ class DisplayController extends AbstractController
     {
         return $this->render('front/display/events.html.twig');
     }
+
+    #[Route('/partenaires', name: 'app_partners')]
+    public function partners(): Response
+    {
+        return $this->render('front/display/partners.html.twig');
+    }
+
+    #[Route('/contact', name: 'app_contact')]
+    public function contact(): Response
+    {
+        return $this->render('front/display/contact.html.twig');
+    }
 }

@@ -19,7 +19,7 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body>
+    <body class="d-flex flex-column min-vh-100">
 
         {% include "_partials/_navbar.html.twig" %}
         {% block body %}{% endblock %}

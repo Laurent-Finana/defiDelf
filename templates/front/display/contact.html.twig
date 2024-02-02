@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+    <main>
+        <div class="container mt-5 pt-5">
+            <h1 class="fw-bold text-center text-uppercase mt-5 pt-5">Nous contacter</h1>
+            <p class="pt-4 text-center">Vous n'avez pas trouvé la réponse à votre question ? Contactez nous, nous vous répondrons dans les meilleurs délais.</p>
+
+            <form action="" class="row gy-4 my-4 w-50 mx-auto">
+                <div class="col-6">
+                    <label for="firstname" class="form-label">Prénom</label>
+                    <input type="text" class="form-control" name="firstname" id="firstname">
+                </div>
+                <div class="col-6">
+                    <label for="lastname" class="form-label">Nom</label>
+                    <input type="text" class="form-control" name="lastname" id="lastname">
+                </div>
+                <div class="col-12">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" name="email" id="email">
+                </div>
+                <div class="col-12">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" name="message" id="message" rows="3"></textarea>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary w-100">Envoyer</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    
+
+{% endblock %}
