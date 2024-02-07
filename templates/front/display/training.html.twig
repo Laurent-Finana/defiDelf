@@ -8,20 +8,32 @@
         <section class="mt-5 pt-5 container">
             <div class="mt-5 pt-5">
                 <h1 class="pt-4 fw-bold text-center text-uppercase">Présentation</h1>
-                <p class="pt-5">L'association Défi-Delf vous propose des <em class="fw-bold text-warning">séances d'entraînement</em>.
-                </p>
-                <p>Pour les candidats, les <span class="text-warning">avantages</span> sont nombreux :</p>
-                <div class="text-center offset-md-1">
-                    <p class="text-start"> <i class="bi bi-check text-success"></i> C'est un excellent moyen de découvrir les conditions de passation d'un examen officiel</p>
-                    <p class="text-start"> <i class="bi bi-check text-success"></i> Une façon efficace de diminuer sa nervosité le jour des épreuves officielles</p>
-                    <p class="text-start"> <i class="bi bi-check text-success"></i> Vérifier son niveau et s'inscrire ainsi à l'examen qui correspond le mieux à ses compétences</p>
-                    <p class="text-start"> <i class="bi bi-check text-success"></i> Travailler la gestion de son temps et apprendre à améliorer sa concentration</p>
+                <div class="row pt-5 mb-2">
+                    <div class="col-12 col-md-9 d-md-flex flex-row">
+                        <div>
+                            <p>L'association Défi-Delf propose une <em class="fw-bold text-warning">préparation spécifique</em> pour les apprenants souhaitant passer l'examen du <em class="fw-bold text-warning">DELF</em> (Diplôme d'Etudes en Langue Française).
+                            Grâce à notre partenariat avec le <em class="fw-bold text-warning">Centre International d'Etudes Françaises</em> (CIEF) de l'université, nous sommes reconnus par <em class="fw-bold text-warning">France Education International</em> (FEI) comme leur centre d'entraînement au DELF pour le département de l'Aube.
+                            </p>
+                            <p>Pour les candidats, les <span class="text-warning">avantages</span> sont nombreux :</p>
+                            <div class="text-center offset-md-1">
+                                <p class="text-start"> <i class="bi bi-check text-success"></i> C'est un excellent moyen de <span class="text-primary">découvrir</span> les conditions de passation d'un examen officiel</p>
+                                <p class="text-start"> <i class="bi bi-check text-success"></i> Une façon efficace de <span class="text-primary">diminuer sa nervosité</span> le jour des épreuves officielles</p>
+                                <p class="text-start"> <i class="bi bi-check text-success"></i> <span class="text-primary">Vérifier</span> son niveau et s'inscrire ainsi à l'examen qui correspond le mieux à ses compétences</p>
+                                <p class="text-start"> <i class="bi bi-check text-success"></i> Travailler la <span class="text-primary">gestion</span> de son temps et apprendre à améliorer sa <span class="text-primary">concentration</span></p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <img class="d-block mx-auto ms-md-5" src="{{ asset('assets/images/logo_fei.jpg') }}" alt="Logo France Education International" height="400" width="400">
+                        </div>
+                    </div>
                 </div>
-                <p>Les sessions d'entraînement se déroulent <span class="text-warning">en soirée</span> au centre de formation de l'association défi-Delf, située à l'INSPE, 6 avenue des Lombards TROYES (enface de l'hôpital).</p>
+                <p>Ce dispositif est ouvert aux <span class="text-warning">volontaires</span>, adhérents de l'association, mais aussi venant de toutes les <span class="text-warning">autres associations</span>.
+                Des relations étroites existent avec l'<em class="fw-bold text-warning">ADDPS-Yschools</em>, qui est le centre départemental de passation du DELF pour le département de l'Aube.</p>
+                <p>Les sessions d'entraînement se déroulent <span class="text-warning">en soirée</span> au centre de formation de l'association défi-Delf, située à l'INSPE, 6 avenue des Lombards TROYES (en face de l'hôpital).</p>
                 <p><span class="fw-bold text-success">Sujets : </span>France Education International envoie les sujets confidentiels à Défi-Delf qui organise la passation des tests.</p>
                 <p><span class="fw-bold text-success">Corrections : </span>France Education International prend entièrement en charge les corrections.</p>
                 <p><span class="fw-bold text-success">Résultats : </span>France Education International envoie les résulatats à Défi-Delf sous 10 jours maximum. Ces résultats seront transmis directement aux candidats par courriel.</p>
-                <p class="text-success"><span class="fw-bold">Inscriptions : 10€ </span>par sesion d'entraînement (à régler sur place)</p>
+                <p class="text-success"><span class="fw-bold">Inscriptions : 10€ </span>par session d'entraînement (à régler sur place)</p>
             </div>
         </section>
         <section class="py-5">
@@ -31,34 +43,52 @@
                 </div>
                    
                 <div class="row pt-5">
-                    <div class="col-12 col-md-6 offset-md-1">
-                        <img src="{{ asset('assets/images/temoignage_mercy.jpg') }}" class="d-block mx-auto d-md-inline border rounded-circle" height="90" width="90" alt="photo de Mercy">
-                        <p class="d-md-inline pt-2 pt-md-0 ps-md-2 fst-italic">"Grâce à l'entraînement, je comprends mieux les épreuves du DELF, je me sens moins stressée."</p>
-                        <p class="text-info"><span class="fw-bold">Mercy</span> (Cameroun)</p>
+                    <div class="col-12 col-md-6 offset-md-1 d-md-flex flex-row">
+                        <div>
+                            <img src="{{ asset('assets/images/temoignage_mercy.jpg') }}" class="d-block mx-auto border rounded-circle" height="90" width="90" alt="photo de Mercy">
+                        </div>
+                        <div class="pt-3 ps-md-3 fst-italic">
+                            <p>"Grâce à l'entraînement, j'ai davantage confiance en moi et je me sens moins stressée. C'est important de savoir s'organiser."</p>
+                            <p class="text-info"><span class="fw-bold">Mercy</span> (Cameroun)</p>
+                        </div>
                     </div>
                 </div>
                 <div class="row pt-5">
                     <div class="col-12 col-md-6">
                     </div>
-                    <div class="col-12 col-md-6 offset-md-5">
-                        <img src="{{ asset('assets/images/temoignage_amina.jpg') }}" class="d-block mx-auto d-md-inline border rounded-circle" height="90" width="90" alt="photo de Amina">
-                        <p class="d-md-inline pt-2 pt-md-0 ps-md-2 fst-italic">"Les épreuves d'entraînement m'ont permis aussi d'être en conditions réelles d'examen."</p>
-                        <p class="text-info text-md-end"><span class="fw-bold">Amina</span> (Maroc)</p>
+                    <div class="col-12 col-md-6 offset-md-5 d-md-flex flex-row">
+                        <div>
+                            <img src="{{ asset('assets/images/temoignage_abdulhamid.jpg') }}" class="d-block mx-auto d-md-inline border rounded-circle" height="90" width="90" alt="photo de Amina">
+                        </div>
+                        <div class="pt-3 ps-md-3 fst-italic">
+                            <p>"Les épreuves d'entraînement m'ont permis aussi d'être en conditions réelles d'examen. Mes résultats à la préparation me donnent confiance pour le DELF."</p>
+                            <p class="text-info"><span class="fw-bold">Abdulhamid</span> (Afghanistan)</p>
+                        </div>
                     </div>
                 </div>
                 <div class="row pt-5">
-                    <div class="col-12 col-md-6 offset-md-1">
-                        <img src="{{ asset('assets/images/temoignage_abdulhamid.jpg') }}" class="d-block mx-auto d-md-inline border rounded-circle" height="90" width="90" alt="photo de Abdulhamid">
-                        <p class="d-md-inline pt-2 pt-md-0 ps-md-2 fst-italic">"Mes résultats à la préparation me donnent confiance pour le DELF."</p>
-                        <p class="text-info"><span class="fw-bold">Abdulhamid</span> (Afghanistan)</p>
+                    <div class="col-12 col-md-6 offset-md-1 d-md-flex flex-row">
+                        <div>
+                            <img src="{{ asset('assets/images/temoignage_abdel.jpg') }}" class="d-block mx-auto border rounded-circle" height="90" width="90" alt="photo de Abdulhamid">
+                        </div>
+                        <div class="pt-3 ps-md-3 fst-italic">
+                            <p>"J'ai passé la compréhension orale et écrite en janvier 2024 et j'ai trouvé les épreuves de niveau B1 difficiles. Je me rends compte que je dois encore beaucoup travailler.
+                            Merci à Défi-Delf de nous proposer ces préparations."</p>
+                            <p class="text-info"><span class="fw-bold">Abdel</span> (Maroc)</p>
+                        </div>
                     </div>
                 </div>
                 <div class="row pt-5">
                     <div class="col-12 col-md-6">
                     </div>
-                    <div class="col-12 col-md-6 offset-md-5">
-                        <p class="fst-italic">"C'est important de bien se préparer, avant le grand jour, pour être moins nerveux."</p>
-                        <p class="text-md-end text-info"><span class="fw-bold">Ganimete</span> (Kosovo)</p>
+                    <div class="col-12 col-md-6 offset-md-5 d-md-flex flex-row">
+                        <div>
+                            <img src="{{ asset('assets/images/vue_ensemble.jpg') }}" class="d-block mx-auto d-md-inline border rounded-circle" height="90" width="90" alt="photo de Amina">
+                        </div>
+                        <div class="pt-3 ps-md-3 fst-italic">
+                            <p>"C'est important de bien se préparer, avant le grand jour, pour être moins nerveux."</p>
+                            <p class="text-info"><span class="fw-bold">Ganimete</span> (Kosovo)</p>
+                        </div>
                     </div>
                 </div>
         
