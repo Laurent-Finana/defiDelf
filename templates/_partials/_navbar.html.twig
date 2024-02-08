@@ -1,7 +1,7 @@
     <header class="mb-4">
         <nav class="navbar navbar-expand-lg fixed-top shadow">
             <div class="container">
-                <a class="navbar-brand fs-6" href="{{ path('app_homepage') }}"><img src="{{ asset('assets/images/logo_navbar.png') }}" alt="logo défi DELF" width="150" height="150"></a>
+                <a class="navbar-brand fs-6" href="{{ path('app_homepage') }}"><img src="{{ asset('assets/images/logo_navbar.png') }}" alt="logo défi DELF" width="100" height="100"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -14,7 +14,7 @@
                             <a href="{{ path('app_actions') }}" class="nav-link  {% if (app.request.attributes.get('_route') == 'app_actions') %} text-white border-top border-white {% endif %}" aria-expanded="false">Nos actions
                             </a>
                         </li>
-                        <li class="nav-item"><a href="{{ path('app_displayTraining') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_displayTraining') %} text-white border-top border-white {% endif %}">Sessions DELF</a></li>
+                        <li class="nav-item"><a href="{{ path('app_displayTraining') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_displayTraining') %} text-white border-top border-white {% endif %}">Entraînement DELF</a></li>
                         <li class="nav-item"><a href="{{ path('app_events') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_events') %} text-white border-top border-white {% endif %}">Evènements</a></li>
                         <li class="nav-item"><a href="{{ path('app_partners') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_partners') %} text-white border-top border-white {% endif %}">Partenaires</a></li>
                         <li class="nav-item"><a href="{{ path('app_contact') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_contact') %} text-white border-top border-white {% endif %}">Contact</a></li>
