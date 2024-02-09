@@ -6,8 +6,8 @@
 
     <main>
         <section class="mt-5 pt-5 container">
-            <div class="mt-5 pt-5">
-                <h1 class="pt-4 fw-bold text-center">Sessions d'entraînement au DELF</h1>
+            
+                <h1 class="mt-5 pt-5 fw-bold text-center">Sessions d'entraînement au DELF</h1>
                 <div class="row pt-5 mb-2">
                     <div class="col-12 col-md-8">
                             <p>L'association Défi-Delf propose une <em class="fw-bold text-warning">préparation spécifique</em> pour les apprenants souhaitant passer l'examen du <em class="fw-bold text-warning">DELF</em> (Diplôme d'Etudes en Langue Française), du niveau A1 au niveau B2. <br>
@@ -34,7 +34,7 @@
                 <p><span class="fw-bold text-success">Corrections : </span>France Education International prend entièrement en charge les corrections.</p>
                 <p><span class="fw-bold text-success">Résultats : </span>France Education International envoie les résulatats à Défi-Delf sous 10 jours maximum. Ces résultats seront transmis directement aux candidats par courriel.</p>
                 <p class="text-success"><span class="fw-bold">Inscriptions : 10€ </span>par session d'entraînement (à régler sur place)</p>
-            </div>
+            
         </section>
         <section class="py-5">
             <div class="container">
@@ -142,6 +142,29 @@
                             <label for="ville" class="form-label">Ville</label>
                             <input type="text" class="form-control" name="ville" id="ville">
                         </div>
+
+                        <div>
+                            <label for="niveau" class="form-label">Niveau <em>(veuillez choisir <em class="fw-bold text-danger">2</em> compétences <em class="fw-bold text-danger">maximum</em>)</em></label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckboxA1" value="optionA1">
+                                    <label class="form-check-label" for="inlineCheckbox1"><span class="text-warning fw-bold">Delf A1</span></label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckboxA2" value="optionA2">
+                                    <label class="form-check-label" for="inlineCheckbox2"><span class="text-warning fw-bold">Delf A2</span></label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckboxB1" value="optionB1">
+                                    <label class="form-check-label" for="inlineCheckbox2"><span class="text-warning fw-bold">Delf B1</span></label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckboxB2" value="optionB2">
+                                    <label class="form-check-label" for="inlineCheckbox2"><span class="text-warning fw-bold">Delf B2</span></label>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary w-100">Envoyer</button>
                         </div>
