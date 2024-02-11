@@ -1,0 +1,53 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav, footer {
+    background-color: #a8d5eb;
+  }
+  
+  main h1 {
+    color: #84197c;
+  }
+  
+  main h2 {
+    color: #444444;
+  }
+  
+  .nav-item a:hover {
+    color: white;
+  }
+
+.bg-presentation-pres {
+    background-color: #ffed00;
+}
+
+.bg-presentation-courses {
+    background-color: rgba(163, 232, 255, 0.884);
+}
+
+.bg-presentation-peda {
+    background-color: rgb(133, 214, 133);
+}
+
+.bg-presentation-eval {
+    background-color: rgb(230, 93, 93);
+}
+
+.zoom {
+    transition: transform 0.3s;
+}
+
+.zoom:hover {
+    transform: scale(1.1);
+    z-index: 10;
+  }
+  
+  /* .card {
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: scale(1.1);
+    z-index: 10;
+  } */
