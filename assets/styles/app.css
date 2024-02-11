@@ -18,7 +18,7 @@ nav, footer {
     color: white;
   }
 
-.bg-presentation-pres {
+/* .bg-presentation-pres {
     background-color: #ffed00;
 }
 
@@ -32,7 +32,7 @@ nav, footer {
 
 .bg-presentation-eval {
     background-color: rgb(230, 93, 93);
-}
+} */
 
 .zoom {
     transition: transform 0.3s;
