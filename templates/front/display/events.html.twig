@@ -8,9 +8,9 @@
         <section class="mt-5 py-5">
             <div class="album pb-5">
                 <div class="container">
-                    <h1 class="mt-5 pt-5 text-center fw-bold mb-4 mb-md-0">On parle de nous</h1>
+                    <h1 class="mt-5 pt-5 text-center fw-bold mb-4 mb-md-0">La presse parle de nous</h1>
                         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 pt-5 g-3">          
-                    
+
                             <div class="col">
                                 <div class="card zoom shadow rounded-4">
                                     <img class="rounded-top-4" src="{{ asset('assets/images/onglet_evenement.jpg') }}" alt="photo de groupe en cours" />
@@ -31,11 +31,36 @@
                                         <p class="card-text">Ils se préparent à passer leur diplôme en langue française</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <small class="text-body-secondary">L'Est Eclair</small>
-                                            <p><a href="{{ asset('assets/images/journal_15-10-2023.jpg') }}">Lire la suite >></a></p>
+                                            <p><a class="link-underline-primary" data-bs-toggle="modal" data-bs-target="#modalPresse" type="button">Lire la suite >></a></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                            {# MODAL #}
+                            <div class="modal fade" id="modalPresse">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            <div class="modal-body">
+                                                <img src="{{ asset('assets/images/journal_15-10-2023.jpg') }}" alt="article journal">
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            {# <div class="col">
+                                <div class="card zoom shadow rounded-4">
+                                    <img class="rounded-top-4" src="{{ asset('assets/images/vue_ensemble.jpg') }}" alt="photo journal" />
+                                    <div class="card-body">
+                                        <p class="card-text">Ils se préparent à passer leur diplôme en langue française</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-body-secondary">L'Est Eclair</small>
+                                            <p><a href="{{ asset('assets/images/journal_15-10-2023.jpg') }}">Lire la suite >></a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> #}
                     
                         </div>
                 </div>
