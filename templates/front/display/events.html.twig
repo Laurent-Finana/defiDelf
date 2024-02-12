@@ -38,13 +38,16 @@
                             </div>
 
                             {# MODAL #}
-                            <div class="modal fade" id="modalPresse">
-                                    <div class="modal-dialog">
+                            <div class="modal fade" tabindex="-1" id="modalPresse" aria-labelledby="modalPresseLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-fullscreen-md-down">
                                         <div class="modal-content">
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            <div class="modal-body">
-                                                <img src="{{ asset('assets/images/journal_15-10-2023.jpg') }}" alt="article journal">
-                                            </div>
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title d-block ms-auto" id="modalPresseLabel">L'association</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img src="{{ asset('assets/images/journal_15-10-2023.jpg') }}" alt="article journal">
+                                                </div>
                                         </div>
                                     </div>
                             </div>
