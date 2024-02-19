@@ -3,7 +3,16 @@
 }
 
 nav, footer {
-    background-color: #a8d5eb;
+    background-color: #004AAD;
+    color: #ffc107;
+  }
+
+  footer a{
+    color: #ffc107;
+  }
+
+  footer a:hover {
+    color: white;
   }
   
   main h1 {
@@ -14,25 +23,13 @@ nav, footer {
     color: #444444;
   }
   
+  .nav-item a{
+    color:  #ffc107;
+  }
+
   .nav-item a:hover {
     color: white;
   }
-
-/* .bg-presentation-pres {
-    background-color: #ffed00;
-}
-
-.bg-presentation-courses {
-    background-color: rgba(163, 232, 255, 0.884);
-}
-
-.bg-presentation-peda {
-    background-color: rgb(133, 214, 133);
-}
-
-.bg-presentation-eval {
-    background-color: rgb(230, 93, 93);
-} */
 
 .zoom {
     transition: transform 0.3s;
@@ -51,7 +48,6 @@ nav, footer {
     transform: scale(1.1);
     z-index: 10;
   } */
-
-  .justify {
-    text-align: justify;
-   }
+ .justify {
+  text-align: justify;
+ }

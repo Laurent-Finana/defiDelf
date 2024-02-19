@@ -14,7 +14,7 @@
 						{% for key, card in cards %}
 							<div class="col">
 								<div class="card zoom shadow rounded-4">
-									<img class="rounded-top-4" src="{{ asset('assets/photos/' ~ card.photo ~ '.jpg') }}" alt="photo"/>
+									<img class="img-fluid img-thumbnail rounded-top-4" src="{{ asset('assets/photos/' ~ card.photo ~ '.jpg') }}" alt="photo"/>
 									<div class="card-body">
 										<h6 class="card-title text-center fw-bold text-warning">{{ card.title }}</h6>
 										<p class="card-text text-center">{{ card.content }}</p>
