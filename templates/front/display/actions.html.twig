@@ -11,12 +11,13 @@
 				<div class="container">
 					<h1 class="mt-5 pt-5 text-center fw-bold mb-4 mb-md-0">Nos actions</h1>
 					<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 pt-5 g-3">
-						{% for photo in photos %}
+						{% for key, card in cards %}
 							<div class="col">
 								<div class="card zoom shadow rounded-4">
-									<img class="rounded-top-4" src="{{ asset('assets/photos/defidelf' ~ photo ~ '.jpg') }}" alt="photo"/>
+									<img class="rounded-top-4" src="{{ asset('assets/photos/' ~ card.photo ~ '.jpg') }}" alt="photo"/>
 									<div class="card-body">
-										<p class="card-text">Court texte de présentation de la photo (facultatif).</p>
+										<h6 class="card-title text-center fw-bold text-warning">{{ card.title }}</h6>
+										<p class="card-text text-center">{{ card.content }}</p>
 										<div class="d-flex justify-content-between align-items-center">
 											<small class="text-body-secondary">25.01.2024</small>
 										</div>
