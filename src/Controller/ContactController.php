@@ -21,16 +21,20 @@ class ContactController extends AbstractController
         $form = $this->createForm(ContactType::class, $data);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()) {
-            $mail = (new TemplatedEmail())
-                ->to('contact@defidelf.org')
-                ->from($data->email)
-                ->subject('Demande de contact')
-                ->htmlTemplate('emails/contact.html.twig')
-                ->context(['data' => $data]);
+            try {
+                $mail = (new TemplatedEmail())
+                    ->to('contact@defidelf.org')
+                    ->from($data->email)
+                    ->subject('Demande de contact')
+                    ->htmlTemplate('emails/contact.html.twig')
+                    ->context(['data' => $data]);
 
-            $mailer->send($mail);
-            //addFlash
-            $this->redirectToRoute('app_contact');
+                $mailer->send($mail);
+                $this->addFlash('success', 'Votre email a bien été envoyé');
+                return $this->redirectToRoute('app_contact');
+            } catch (\Exception $e) {
+                $this->addFlash('danger', 'Impossible d\'envoyer votre email');
+            }
         }
 
         return $this->render('contact/contact.html.twig', [
