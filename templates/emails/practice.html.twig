@@ -1,0 +1,17 @@
+<p>Une nouvelle demande d'inscription aux entraînements Delf a été reçue</p>
+
+<ul>
+    <li>Prénom : {{data.firstname}}</li>
+    <li>Nom : {{data.lastname}}</li>
+    <li>Email : {{data.email}}</li>
+    <li>Nationalité : {{data.nationality}}</li>
+    <li>Téléphone 1 : {{data.telephone_number_one}}</li>
+    <li>Téléphone 2 : {{data.telephone_number_two}}</li>
+    <li>Adresse : {{data.address}}</li>
+    <li>Complément d'adresse : {{data.add_on_address}}</li>
+    <li>Code Postal : {{data.postal_code}}</li>
+    <li>Ville : {{data.city}}</li>
+    {% for choice in data.level %} 
+        <li>Niveau : {{choice}}</li>
+    {% endfor %}
+</ul>
