@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PracticeController extends AbstractController
 {
-    #[Route('/entrainement-delf-inscriptiopn', name: 'app_practice')]
+    #[Route('/entrainement-delf-inscription', name: 'app_practice')]
     public function practice(Request $request, MailerInterface $mailer): Response
     {
         $data = new PracticeDTO();
@@ -31,11 +31,12 @@ class PracticeController extends AbstractController
 
                 $mailer->send($mail);
                 $this->addFlash('success', 'Votre demande a bien été envoyée');
-                return $this->redirectToRoute('app_practice', ['_fragment'=>'practiceForm']);
+                return $this->redirectToRoute('app_practice');
             } catch (\Exception $e) {
                 $this->addFlash('danger', 'Impossible d\'envoyer votre demande');
-            
             }
+        } elseif($form->isSubmitted()) {
+            $this->addFlash('danger', 'Impossible d\'envoyer votre demande, veuillez vérifier les informations fournies dans le formulaire');
         }
 
         return $this->render('practice/practice.html.twig', [

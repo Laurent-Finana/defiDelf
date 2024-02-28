@@ -18,7 +18,7 @@ class PracticeType extends AbstractType
         $builder
             ->add('firstname', TextType::class, [
                 'empty_data' => '',
-                'label' => 'Prénom'
+                'label' => 'Prénom',
             ])
             ->add('lastname', TextType::class, [
                 'empty_data' => '',
@@ -33,7 +33,7 @@ class PracticeType extends AbstractType
             ])
             ->add('telephone_number_two', TextType::class, [
                 'empty_data' => '',
-                'label' => 'Numéro WhatsApp'
+                'label' => 'WhatsApp',
             ])
             ->add('nationality', TextType::class, [
                 'empty_data' => '',
@@ -45,7 +45,7 @@ class PracticeType extends AbstractType
             ])
             ->add('add_on_address', TextType::class, [
                 'empty_data' => '',
-                'label' => 'Complément d\'adresse'
+                'label' => 'Complément d\'adresse',
             ])
             ->add('postal_code', TextType::class, [
                 'empty_data' => '',

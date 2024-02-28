@@ -7,7 +7,12 @@
     <main>
         <div class="container">
             <section class="mt-5 pt-5">
-                <h1 class="mt-5 pt-5 fw-bold text-center">Sessions d'entraînement au DELF</h1>
+
+                <div class="mt-3 pt-3 text-center">
+                    {{ include('_partials/_flash_messages.html.twig') }}
+                </div>
+
+                <h1 class="mt-4 pt-4 fw-bold text-center">Sessions d'entraînement au DELF</h1>
 
                 <div class="mt-5 d-flex justify-content-center">
                     <ul class="border border-primary rounded-5 p-4">
@@ -98,12 +103,9 @@
                     </div>
                 </div>
             </section>
-            <section id="practiceForm">
+            <section>
                 <div class="row pt-3 pb-5 align-items-center">
                     <div class="col-12 col-md-5">
-                         
-				            {{ include('_partials/_flash_messages.html.twig') }}
-			           
                         <h1 class="fw-bold text-center text-success">Inscription aux sessions d'entraînement sur deux compétences du DELF (compréhension orale et écrite)</h1>
                         <p class="mt-4 text-center">Pour participer aux sessions d'entraînement du DELF, merci de bien vouloir remplir ce formulaire.
                             <br>Nous reviendrons vers vous pour confirmation.
