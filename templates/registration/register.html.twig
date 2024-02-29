@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register
+{% endblock %}
+
+{% block body %}
+<main>
+	<div class="container w-50 mt-5 pt-5">
+		<h1 class="mt-5 mb-4 pt-5 text-center fw-bold">Inscription</h1>
+
+		{{ form_errors(registrationForm) }}
+
+		{{ form_start(registrationForm) }}
+		<div class="row">
+            <div class="col-6">
+                {{ form_row(registrationForm.lastname) }}
+            </div>
+            <div class="col-6">
+                {{ form_row(registrationForm.firstname) }}
+            </div>
+            <div class="col-12">
+                {{ form_row(registrationForm.email) }}
+            </div>
+            <div class="col-6">
+                {{ form_row(registrationForm.phone_number) }}
+            </div>
+            <div class="col-6">
+                {{ form_row(registrationForm.whatsApp) }}
+            </div>
+            <div class="col-12">
+                {{ form_row(registrationForm.plainPassword) }}
+            </div>
+            <div class="col-6">
+                {{ form_row(registrationForm.nationality) }}
+            </div>
+            <div class="col-6">
+                {{ form_row(registrationForm.job) }}
+            </div>
+            <p class="text-danger">(*) champs obligatoires</p>
+        </div>
+		{{ form_end(registrationForm) }}
+	</div>
+</main>
+
+{% endblock %}

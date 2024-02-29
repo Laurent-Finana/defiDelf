@@ -33,7 +33,7 @@ class ContactType extends AbstractType
             ])
             ->add('save', SubmitType::class, [
                 'label' => 'Envoyer',
-                'attr' => ['class' => 'd-block mx-auto bg-primary text-white']
+                'attr' => ['class' => 'd-block mx-auto btn-primary']
             ])
         ;
     }
