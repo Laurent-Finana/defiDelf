@@ -35,6 +35,7 @@ class RegistrationController extends AbstractController
             $entityManager->flush();
             // do anything else you need here, like send an email
 
+            $this->addFlash('success', 'Inscription réussie, l\'administrateur doit vous donner les droits pour accéder aux cours.');
             return $userAuthenticator->authenticateUser(
                 $user,
                 $authenticator,
