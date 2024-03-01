@@ -11,7 +11,7 @@
                 {% for article in articles | reverse %}
                     <div class="row mt-5 pb-4 border-bottom border-primary">
                         <div class="col-12 col-lg-4">
-                            <img src="{{ article.thumbnail }}" class="d-block mx-auto" width="300" height="200" alt="">
+                            <img src="{{ vich_uploader_asset(article, 'thumbnailFile') }}" class="d-block mx-auto" width="300" height="200" alt="">
                         </div>
                         <div class="col">
                             <p class="text-end text-warning"><u><em>{{ article.createdAt | date("d/m/Y") }}</em></u></p>

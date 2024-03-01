@@ -5,8 +5,12 @@ namespace App\Entity;
 use App\Repository\ArticleRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
+#[Vich\Uploadable()]
 class Article
 {
     #[ORM\Id]
@@ -16,6 +20,10 @@ class Article
 
     #[ORM\Column(length: 255)]
     private ?string $thumbnail = null;
+
+    #[Vich\UploadableField(mapping: 'articles', fileNameProperty: 'thumbnail')]
+    #[Assert\Image(maxWidth: 300)]
+    private ?File $thumbnailFile = null;
 
     #[ORM\Column(length: 255)]
     private ?string $title = null;
@@ -95,6 +103,26 @@ class Article
     public function setCreatedAt(\DateTimeImmutable $created_at): static
     {
         $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of thumbnailFile
+     */ 
+    public function getThumbnailFile()
+    {
+        return $this->thumbnailFile;
+    }
+
+    /**
+     * Set the value of thumbnailFile
+     *
+     * @return  self
+     */ 
+    public function setThumbnailFile($thumbnailFile): static
+    {
+        $this->thumbnailFile = $thumbnailFile;
 
         return $this;
     }
