@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Article{% endblock %}
+
+{% block body %}
+<main>
+    <div class="container mt-5 mb-4 pt-5">
+        <h1 class="mt-5 mb-4 pt-5 text-center fw-bold">Mettre à jour un article</h1>
+
+    {{ include('admin/article/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a href="{{ path('app_admin_article_index') }}" class="btn btn-warning my-2">Retour à la liste</a>
+
+    {{ include('admin/article/_delete_form.html.twig') }}
+    </div>
+</main>
+    
+{% endblock %}

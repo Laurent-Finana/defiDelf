@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des articles
+{% endblock %}
+
+{% block body %}
+	<main>
+		<div class="container mt-5 pt-5">
+			<h1 class="mt-5 pt-5 text-center fw-bold">Liste des articles</h1>
+
+			<table class="table mt-4">
+				<thead>
+					<tr>
+						<th>Thumbnail</th>
+						<th>Title</th>
+						<th>Content</th>
+						<th>Press</th>
+						<th>Created_at</th>
+						<th>actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for article in articles %}
+						<tr>
+							<td>{{ article.thumbnail }}</td>
+							<td>{{ article.title }}</td>
+							<td>{{ article.content }}</td>
+							<td>{{ article.press ? 'Yes' : 'No' }}</td>
+							<td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+							<td>
+								<a href="{{ path('app_admin_article_show', {'id': article.id}) }}" class="btn btn-primary mb-1">show</a>
+								<a href="{{ path('app_admin_article_edit', {'id': article.id}) }}" class="btn btn-warning">edit</a>
+							</td>
+						</tr>
+					{% else %}
+						<tr>
+							<td colspan="7">no records found</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+
+			<a href="{{ path('app_admin_article_new') }}" class="btn btn-success">Create new</a>
+		</div>
+	</main>
+{% endblock %}

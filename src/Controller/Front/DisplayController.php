@@ -2,6 +2,7 @@
 
 namespace App\Controller\Front;
 
+use App\Repository\ArticleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -159,9 +160,13 @@ class DisplayController extends AbstractController
     }
 
     #[Route('/evenements', name: 'app_events')]
-    public function events(): Response
+    public function events(ArticleRepository $articleRepository): Response
     {
-        return $this->render('front/display/events.html.twig');
+        $articles = $articleRepository->findAll();
+
+        return $this->render('front/display/events.html.twig', [
+            "articles" => $articles
+        ]);
     }
 
     #[Route('/partenaires', name: 'app_partners')]

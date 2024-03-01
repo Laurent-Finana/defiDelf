@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article{% endblock %}
+
+{% block body %}
+<main>
+    <div class="container mt-5 pt-5">
+        <h1 class="mt-5 mb-4 pt-5 text-center fw-bold">Article</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Thumbnail</th>
+                <td>{{ article.thumbnail }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ article.title }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ article.content }}</td>
+            </tr>
+            <tr>
+                <th>Press</th>
+                <td>{{ article.press ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Created_at</th>
+                <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_article_index') }}" class="btn btn-warning mb-2">Retour à la liste</a>
+
+    <a href="{{ path('app_admin_article_edit', {'id': article.id}) }}" class="btn btn-primary mb-2">Mettre à jour</a>
+
+    {{ include('admin/article/_delete_form.html.twig') }}
+    </div>
+</main>
+{% endblock %}
