@@ -19,13 +19,6 @@ class Article
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $thumbnail = null;
-
-    #[Vich\UploadableField(mapping: 'articles', fileNameProperty: 'thumbnail')]
-    #[Assert\Image(maxWidth: 300)]
-    private ?File $thumbnailFile = null;
-
-    #[ORM\Column(length: 255)]
     private ?string $title = null;
 
     #[ORM\Column(type: Types::TEXT)]
@@ -37,6 +30,16 @@ class Article
     #[ORM\Column]
     private ?\DateTimeImmutable $created_at = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $updatedAt = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $thumbnail = null;
+
+    #[Vich\UploadableField(mapping: 'articles', fileNameProperty: 'thumbnail')]
+    #[Assert\Image()]
+    private ?File $thumbnailFile = null;
+
     public function __construct()
     {
         $this->created_at = new \DateTimeImmutable('now');
@@ -45,18 +48,6 @@ class Article
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getThumbnail(): ?string
-    {
-        return $this->thumbnail;
-    }
-
-    public function setThumbnail(string $thumbnail): static
-    {
-        $this->thumbnail = $thumbnail;
-
-        return $this;
     }
 
     public function getTitle(): ?string
@@ -108,6 +99,38 @@ class Article
     }
 
     /**
+     * Get the value of updatedAt
+     */ 
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Set the value of updatedAt
+     *
+     * @return  self
+     */ 
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getThumbnail(): ?string
+    {
+        return $this->thumbnail;
+    }
+
+    public function setThumbnail(?string $thumbnail): static
+    {
+        $this->thumbnail = $thumbnail;
+
+        return $this;
+    }
+
+    /**
      * Get the value of thumbnailFile
      */ 
     public function getThumbnailFile()
@@ -123,6 +146,12 @@ class Article
     public function setThumbnailFile($thumbnailFile): static
     {
         $this->thumbnailFile = $thumbnailFile;
+
+        if (null !== $thumbnailFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
 
         return $this;
     }

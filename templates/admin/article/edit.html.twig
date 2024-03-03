@@ -5,7 +5,9 @@
 {% block body %}
 <main>
     <div class="container mt-5 mb-4 pt-5">
-        <h1 class="mt-5 mb-4 pt-5 text-center fw-bold">Mettre à jour un article</h1>
+        <h1 class="mt-5 mb-4 pt-5 text-center fw-bold">Mettre à jour l'article : {{ article.title }}</h1>
+
+        <img src="{{ vich_uploader_asset(article, 'thumbnailFile') }}" class="d-block mx-auto" width="500" alt="Photo de l'article">
 
     {{ include('admin/article/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
