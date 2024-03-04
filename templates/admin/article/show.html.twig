@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/admin_base.html.twig' %}
 
 {% block title %}Article{% endblock %}
 
@@ -12,23 +12,19 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Thumbnail</th>
-                <td>{{ article.thumbnail }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
+                <th>Titre</th>
                 <td>{{ article.title }}</td>
             </tr>
             <tr>
-                <th>Content</th>
+                <th>Contenu</th>
                 <td>{{ article.content }}</td>
             </tr>
             <tr>
-                <th>Press</th>
+                <th>Presse</th>
                 <td>{{ article.press ? 'Yes' : 'No' }}</td>
             </tr>
             <tr>
-                <th>Created_at</th>
+                <th>Créé le</th>
                 <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
         </tbody>

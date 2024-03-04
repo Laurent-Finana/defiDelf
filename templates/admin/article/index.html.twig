@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/admin_base.html.twig' %}
 
 {% block title %}Liste des articles
 {% endblock %}
@@ -7,40 +7,39 @@
 	<main>
 		<div class="container mt-5 mb-4 pt-5">
 			<h1 class="mt-5 pt-5 text-center fw-bold">Liste des articles</h1>
-
+			<a href="{{ path('app_admin_article_new') }}" class="btn btn-success">Nouvel article</a>
 			<table class="table mt-4">
 				<thead>
 					<tr>
-						<th>Thumbnail</th>
-						<th>Title</th>
-						<th>Content</th>
-						<th>Press</th>
-						<th>Created_at</th>
-						<th>actions</th>
+						<th>Image</th>
+						<th>Titre</th>
+						<th>Contenu</th>
+						<th>Presse</th>
+						<th>Créé le</th>
+						<th>Actions</th>
 					</tr>
 				</thead>
 				<tbody>
 					{% for article in articles | reverse %}
 						<tr>
-							<td>{{ article.thumbnail }}</td>
+							<td><img src="{{ vich_uploader_asset(article, 'thumbnailFile') }}" width="150" alt="photo article"></td>
 							<td>{{ article.title }}</td>
 							<td>{{ article.content }}</td>
 							<td>{{ article.press ? 'Yes' : 'No' }}</td>
 							<td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
 							<td>
-								<a href="{{ path('app_admin_article_show', {'id': article.id}) }}" class="btn btn-primary mb-1">show</a>
-								<a href="{{ path('app_admin_article_edit', {'id': article.id}) }}" class="btn btn-warning">edit</a>
+								<a href="{{ path('app_admin_article_show', {'id': article.id}) }}" class="btn btn-primary mb-1">Voir</a>
+								<a href="{{ path('app_admin_article_edit', {'id': article.id}) }}" class="btn btn-warning">Modifier</a>
 							</td>
 						</tr>
 					{% else %}
 						<tr>
-							<td colspan="7">no records found</td>
+							<td colspan="7">Aucun enregistrement trouvé</td>
 						</tr>
 					{% endfor %}
 				</tbody>
 			</table>
-
-			<a href="{{ path('app_admin_article_new') }}" class="btn btn-success">Create new</a>
+			<a href="{{ path('app_admin_article_new') }}" class="btn btn-success">Nouvel article</a>
 		</div>
 	</main>
 {% endblock %}

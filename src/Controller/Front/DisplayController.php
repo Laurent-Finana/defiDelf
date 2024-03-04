@@ -170,7 +170,7 @@ class DisplayController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_news_show', methods: ['GET'])]
+    #[Route('/article/{id}', name: 'app_news_show', methods: ['GET'])]
     public function newsShow(Article $article): Response
     {
         return $this->render('front/display/news_show.html.twig', [
