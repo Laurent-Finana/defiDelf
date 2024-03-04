@@ -20,7 +20,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					{% for article in articles %}
+					{% for article in articles | reverse %}
 						<tr>
 							<td>{{ article.thumbnail }}</td>
 							<td>{{ article.title }}</td>
