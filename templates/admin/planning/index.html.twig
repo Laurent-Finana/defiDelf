@@ -1,0 +1,38 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+{% block title %}Liste des sessions DELF{% endblock %}
+
+{% block body %}
+    <main>
+		<div class="container mt-5 mb-4 pt-5">
+			<h1 class="mt-5 pt-5 text-center fw-bold">Liste des sessions DELF</h1>
+
+            <table class="table mt-4">
+				<thead>
+					<tr>
+						<th>DELF A1</th>
+						<th>DELF A2</th>
+						<th>DELF B1</th>
+						<th>DELF B2</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+                <tbody>
+					{% for session in sessions %}
+						<tr>
+							<td>{{ session.DelfA1 | date ('d-m-Y H:i:s')}}</td>
+							<td>{{ session.DelfA2 | date ('d-m-Y H:i:s')}}</td>
+							<td>{{ session.DelfB1 | date ('d-m-Y H:i:s')}}</td>
+							<td>{{ session.DelfB2 | date ('d-m-Y H:i:s')}}</td>
+                            <td>
+								<a href="{# {{ path('app_admin_planning_show', {'id': planning.id}) }} #}" class="btn btn-primary mb-1">Voir</a>
+								<a href="{# {{ path('app_admin_planning_edit', {'id': planning.id}) }} #}" class="btn btn-warning">Modifier</a>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+            <a href="{{ path('app_admin_planning_new') }}" class="btn btn-success">Nouvel session</a>
+		</div>
+	</main>
+{% endblock %}
