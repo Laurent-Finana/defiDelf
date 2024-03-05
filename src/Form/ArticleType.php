@@ -33,6 +33,13 @@ class ArticleType extends AbstractType
                 'data' => false,
                 'required' => false
                ])
+            ->add('external_link', TextType::class, [
+                'label' => 'Lien externe',
+                'empty_data' => ''
+            ])
+            ->add('thumbnailPressFile', FileType::class, [
+                'label' => 'Fichier image presse'
+            ])
             ->add('created_at', DateTimeType::class, [
                 'label' => 'Créé le :'
             ])
@@ -43,6 +50,9 @@ class ArticleType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Article::class,
+            'attr' => [
+                'novalidate' => 'novalidate',
+            ]
         ]);
     }
 }

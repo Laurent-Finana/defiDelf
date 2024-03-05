@@ -40,6 +40,16 @@ class Article
     #[Assert\Image()]
     private ?File $thumbnailFile = null;
 
+    #[ORM\Column(length: 2048, nullable: true)]
+    private ?string $external_link = null;
+
+    #[Vich\UploadableField(mapping: 'articles', fileNameProperty: 'thumbnailPress')]
+    #[Assert\Image()]
+    private ?File $thumbnailPressFile = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $thumbnailPress = null;
+
     public function __construct()
     {
         $this->created_at = new \DateTimeImmutable('now');
@@ -152,6 +162,56 @@ class Article
             // otherwise the event listeners won't be called and the file is lost
             $this->updatedAt = new \DateTimeImmutable();
         }
+
+        return $this;
+    }
+
+    public function getExternalLink(): ?string
+    {
+        return $this->external_link;
+    }
+
+    public function setExternalLink(?string $external_link): static
+    {
+        $this->external_link = $external_link;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of thumbnailPressFile
+     */ 
+    public function getThumbnailPressFile()
+    {
+        return $this->thumbnailPressFile;
+    }
+
+    /**
+     * Set the value of thumbnailPressFile
+     *
+     * @return  self
+     */ 
+    public function setThumbnailPressFile($thumbnailPressFile): static
+    {
+        $this->thumbnailPressFile = $thumbnailPressFile;
+
+        if (null !== $thumbnailPressFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+
+        return $this;
+    }
+
+    public function getThumbnailPress(): ?string
+    {
+        return $this->thumbnailPress;
+    }
+
+    public function setThumbnailPress(?string $thumbnailPress): static
+    {
+        $this->thumbnailPress = $thumbnailPress;
 
         return $this;
     }

@@ -15,6 +15,7 @@
 						<th>Titre</th>
 						<th>Contenu</th>
 						<th>Presse</th>
+						<th>Lien externe</th>
 						<th>Créé le</th>
 						<th>Actions</th>
 					</tr>
@@ -26,6 +27,7 @@
 							<td>{{ article.title }}</td>
 							<td>{{ article.content }}</td>
 							<td>{{ article.press ? 'Yes' : 'No' }}</td>
+							<td>{{ article.externalLink }}</td>
 							<td>{{ article.createdAt ? article.createdAt|date('d-m-Y H:i:s') : '' }}</td>
 							<td>
 								<a href="{{ path('app_admin_article_show', {'id': article.id}) }}" class="btn btn-primary mb-1">Voir</a>

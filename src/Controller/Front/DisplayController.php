@@ -17,9 +17,13 @@ class DisplayController extends AbstractController
     }
 
     #[Route('/presentation', name: 'app_presentation')]
-    public function presentation(): Response
+    public function presentation(ArticleRepository $article): Response
     {
-        return $this->render('front/display/presentation.html.twig');
+        $articles = $article->findByPress(true);
+
+        return $this->render('front/display/presentation.html.twig', [
+            'articles' => $articles
+        ]);
     }
 
     #[Route('/actions', name: 'app_actions')]
@@ -163,7 +167,7 @@ class DisplayController extends AbstractController
     #[Route('/actualites', name: 'app_news')]
     public function news(ArticleRepository $articleRepository): Response
     {
-        $articles = $articleRepository->findAll();
+        $articles = $articleRepository->findByPress(false);
 
         return $this->render('front/display/news.html.twig', [
             "articles" => $articles
