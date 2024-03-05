@@ -5,12 +5,12 @@
 
 {% block body %}
 	<main>
-		<div class="container mt-5 pt-5">
-			<h1 class="mt-5 pt-5 text-center fw-bold">Ajouter de nouvelles sessions DELF</h1>
+		<div class="container mt-5 pt-5 w-50">
+			<h1 class="my-5 pt-5 text-center fw-bold">Ajouter de nouvelles sessions DELF</h1>
 
 			{{ include('admin/planning/_form.html.twig') }}
 
-			<a href="{{ path('app_admin_planning') }}" class="btn btn-warning mt-2 mb-4">Retour à la liste</a>
+			<a href="{{ path('app_admin_planning_index') }}" class="btn btn-warning mt-2 mb-4">Retour à la liste</a>
 		</div>
 	</main>
 {% endblock %}

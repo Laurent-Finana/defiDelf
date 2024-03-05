@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\DTO\PracticeDTO;
 use App\Form\PracticeType;
+use App\Repository\PlanningRepository;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class PracticeController extends AbstractController
 {
     #[Route('/entrainement-delf-inscription', name: 'app_practice')]
-    public function practice(Request $request, MailerInterface $mailer): Response
+    public function practice(Request $request, MailerInterface $mailer, PlanningRepository $planning): Response
     {
         $data = new PracticeDTO();
 
@@ -39,8 +40,11 @@ class PracticeController extends AbstractController
             $this->addFlash('danger', 'Impossible d\'envoyer votre demande, veuillez vérifier les informations fournies dans le formulaire');
         }
 
+        $dates = $planning->findAll();
+
         return $this->render('practice/practice.html.twig', [
             'form' => $form,
+            'dates' => $dates
         ]);
     }
 }

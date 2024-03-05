@@ -18,21 +18,21 @@
 					</tr>
 				</thead>
                 <tbody>
-					{% for session in sessions %}
+					{% for planning in plannings %}
 						<tr>
-							<td>{{ session.DelfA1 | date ('d-m-Y H:i:s')}}</td>
-							<td>{{ session.DelfA2 | date ('d-m-Y H:i:s')}}</td>
-							<td>{{ session.DelfB1 | date ('d-m-Y H:i:s')}}</td>
-							<td>{{ session.DelfB2 | date ('d-m-Y H:i:s')}}</td>
+							<td>{{ planning.DelfA1 }}</td>
+							<td>{{ planning.DelfA2 }}</td>
+							<td>{{ planning.DelfB1 }}</td>
+							<td>{{ planning.DelfB2 }}</td>
                             <td>
-								<a href="{# {{ path('app_admin_planning_show', {'id': planning.id}) }} #}" class="btn btn-primary mb-1">Voir</a>
-								<a href="{# {{ path('app_admin_planning_edit', {'id': planning.id}) }} #}" class="btn btn-warning">Modifier</a>
+								<a href="{{ path('app_admin_planning_show', {'id': planning.id}) }}" class="btn btn-warning mb-1">Voir</a>
+								<a href="{{ path('app_admin_planning_edit', {'id': planning.id}) }}" class="btn btn-warning mb-1">Modifier</a>
+								{{ include('admin/planning/_delete_form.html.twig') }}
 							</td>
 						</tr>
 					{% endfor %}
 				</tbody>
 			</table>
-            <a href="{{ path('app_admin_planning_new') }}" class="btn btn-success">Nouvel session</a>
 		</div>
 	</main>
 {% endblock %}

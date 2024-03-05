@@ -59,14 +59,14 @@ class PracticeType extends AbstractType
                 'empty_data' => [],
                 'label' => 'Niveau (Veuillez choisir 2 niveaux maximum)',
                 'choices' => [
-                    'Delf A1 - Lundi 15 avril 17h45' => 'Delf A1',
-                    'Delf A2 - Mardi 16 avril 17h45' => 'Delf A2',
-                    'Delf B1 - Jeudi 18 avril 17h45' => 'Delf B1',
-                    'Delf B2 - Lundi 15 avril 17h45' => 'Delf B2'
+                    'Delf A1' => 'Delf A1',
+                    'Delf A2' => 'Delf A2',
+                    'Delf B1' => 'Delf B1',
+                    'Delf B2' => 'Delf B2'
                 ],
                 'multiple' => true,
                 'expanded' => true,
-                'attr' => ['class' => 'text-warning fw-bold']
+                'attr' => ['class' => 'text-info fw-bold']
             ])
             ->add('save', SubmitType::class, [
                 'label' => 'Envoyer'

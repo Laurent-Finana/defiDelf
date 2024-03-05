@@ -16,10 +16,12 @@
 
                 <div class="mt-5 d-flex justify-content-center">
                     <ul class="border border-primary rounded-5 p-4">
-                        <li><strong class="text-success">DELF A1</strong> : lundi 15 avril 17h45</li>
-                        <li><strong class="text-success">DELF A2</strong> : mardi 16 avril 17h45</li>
-                        <li><strong class="text-success">DELF B1</strong> : jeudi 18 avril 17h45</li>
-                        <li><strong class="text-success">DELF B2</strong> : lundi 15 avril 17h45</li>
+                        {% for date in dates %}
+                            <li><strong class="text-success">DELF A1</strong> : {{ date.DelfA1 }}</li>
+                            <li><strong class="text-success">DELF A2</strong> : {{ date.DelfA2 }}</li>
+                            <li><strong class="text-success">DELF B1</strong> : {{ date.DelfB1 }}</li>
+                            <li><strong class="text-success">DELF B2</strong> : {{ date.DelfB2 }}</li>
+                        {% endfor %}
                     </ul>
                 </div>
 
@@ -104,12 +106,25 @@
                 </div>
             </section>
             <section>
-                <div class="row pt-3 pb-5 align-items-center">
-                    <div class="col-12 col-md-5">
-                        <h1 class="fw-bold text-center text-success">Inscription aux sessions d'entraînement sur deux compétences du DELF (compréhension orale et écrite)</h1>
-                        <p class="mt-4 text-center">Pour participer aux sessions d'entraînement du DELF, merci de bien vouloir remplir ce formulaire.
-                            <br>Nous reviendrons vers vous pour confirmation.
-                        </p>
+                <div class="row pt-3 pb-5">
+                    <div class="col-12 col-md-5 d-flex flex-column justify-content-between">
+                        <div>
+                            <h1 class="fw-bold text-center text-success">Inscription aux sessions d'entraînement sur deux compétences du DELF (compréhension orale et écrite)</h1>
+                            <p class="mt-4 text-center">Pour participer aux sessions d'entraînement du DELF, merci de bien vouloir remplir ce formulaire.
+                                <br>Nous reviendrons vers vous pour confirmation.
+                            </p>
+                        </div>
+                        <div class="my-4">
+                            <h5 class="text-danger text-center">Rappel des dates</h5>
+                            <ul class="border border-primary rounded-5 p-4">
+                                {% for date in dates %}
+                                    <li><strong class="text-info">DELF A1</strong> : <strong class="text-secondary">{{ date.DelfA1 }}</strong></li>
+                                    <li><strong class="text-info">DELF A2</strong> : <strong class="text-secondary">{{ date.DelfA2 }}</strong></li>
+                                    <li><strong class="text-info">DELF B1</strong> : <strong class="text-secondary">{{ date.DelfB1 }}</strong></li>
+                                    <li><strong class="text-info">DELF B2</strong> : <strong class="text-secondary">{{ date.DelfB2 }}</strong></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </div>
 
                     {# FORMULAIRE D'INSCRIPTION #}
