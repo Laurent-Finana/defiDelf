@@ -4,7 +4,6 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -16,27 +15,13 @@ use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Regex;
 
-class UserType extends AbstractType
+class User1Type extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('email', EmailType::class, [
                 'empty_data' => ''
-            ])
-            ->add('roles', ChoiceType::class, [
-                'choices' => [
-                    'Utilisateur' => 'ROLE_USER',
-                    'Apprenant' => 'ROLE_APPRENANT',
-                    'Professeur' => 'ROLE_PROF',
-                    'Administrateur' => 'ROLE_ADMIN'
-                ],
-                'multiple' => true,
-                'expanded' => true,
-                'label' => 'Rôle(s)',
-                'label_attr' => [
-                    'class' => 'checkbox-inline',
-                ]
             ])
             ->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
                 // Get Form from Event
@@ -46,20 +31,18 @@ class UserType extends AbstractType
 
                 // If User exist
                 if ($user->getId() !== null) {
-                    // Edit User Password
                     $form->add('password', PasswordType::class, [
                         'label' => 'Mot de passe',
                         'mapped' => false,
                         'attr' => [
-                            'placeholder' => 'Laissez vide si inchangé'
+                            'placeholder' => 'Laisser vide si inchangé'
                         ],
                         'constraints' => [
                             new Regex(
-                                '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*\-+_\.]).{8,}$/',
+                                '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*\-+_\.\/]).{8,}$/',
                                 "Le mot de passe doit contenir au minimum 8 caractères, une majuscule, un chiffre et un caractère spécial"
                             ),
                         ],
-
                     ]);
                 } else {
                     // New
@@ -72,7 +55,7 @@ class UserType extends AbstractType
                                 'message' => 'Merci d\'entrer un mot de passe',
                             ]),
                             new Regex(
-                                '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*\-+_\.]).{8,}$/',
+                                '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*\-+_\.\/]).{8,}$/',
                                 "Le mot de passe doit contenir au minimum 8 caractères, une majuscule, un chiffre et un caractère spécial"
                             ),
                             new Length([

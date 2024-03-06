@@ -9,6 +9,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/admin/user')]
@@ -23,13 +24,18 @@ class UserController extends AbstractController
     }
 
     #[Route('/new', name: 'app_admin_user_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $userPasswordHasher): Response
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $hashedPassword = $userPasswordHasher->hashPassword($user, $user->getPassword());
+            // On écrase le mot de passe en clair par le mot de passe haché
+            $user->setPassword($hashedPassword);
+
             $entityManager->persist($user);
             $entityManager->flush();
 
@@ -60,10 +66,10 @@ class UserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
+            $this->addFlash('success', 'L\'utilisateur a bien été modifié');
             return $this->redirectToRoute('app_admin_user_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        $this->addFlash('success', 'L\'utilisateur a bien été modifié');
         return $this->render('admin/user/edit.html.twig', [
             'user' => $user,
             'form' => $form,
