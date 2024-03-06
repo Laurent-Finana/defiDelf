@@ -1,0 +1,54 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+{% block title %}Utilisateur{% endblock %}
+
+{% block body %}
+<main>
+    <div class="container my-5 pt-5">
+        <h1 class="mt-5 pt-5 fw-bold text-center">{{ user.lastname }} {{ user.firstname }}</h1>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Email</th>
+                    <td>{{ user.email }}</td>
+                </tr>
+                <tr>
+                    <th>Nom</th>
+                    <td>{{ user.lastname }}</td>
+                </tr>
+                <tr>
+                    <th>Prénom</th>
+                    <td>{{ user.firstname }}</td>
+                </tr>
+                <tr>
+                    <th>Rôles</th>
+                    <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Téléphone</th>
+                    <td>{{ user.phoneNumber }}</td>
+                </tr>
+                <tr>
+                    <th>WhatsApp</th>
+                    <td>{{ user.whatsApp }}</td>
+                </tr>
+                <tr>
+                    <th>Nationalité</th>
+                    <td>{{ user.nationality }}</td>
+                </tr>
+                <tr>
+                    <th>Profession</th>
+                    <td>{{ user.job }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_admin_user_index') }}" class="btn btn-warning mb-1">Retour liste</a>
+
+        <a href="{{ path('app_admin_user_edit', {'id': user.id}) }}" class="btn btn-primary mb-1">Modifier</a>
+
+        {{ include('admin/user/_delete_form.html.twig') }}
+    </div>
+</main>
+{% endblock %}

@@ -36,6 +36,7 @@ class ArticleController extends AbstractController
             $entityManager->persist($article);
             $entityManager->flush();
 
+            $this->addFlash('success', 'L\'article a bien été créé');
             return $this->redirectToRoute('app_admin_article_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -61,6 +62,7 @@ class ArticleController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
+            $this->addFlash('success', 'L\'article a bien été modifié');
             return $this->redirectToRoute('app_admin_article_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -78,6 +80,7 @@ class ArticleController extends AbstractController
             $entityManager->flush();
         }
 
+        $this->addFlash('danger', 'L\'article a bien été supprimé');
         return $this->redirectToRoute('app_admin_article_index', [], Response::HTTP_SEE_OTHER);
     }
 }

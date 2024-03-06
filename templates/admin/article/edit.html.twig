@@ -9,12 +9,11 @@
 
         <img src="{{ vich_uploader_asset(article, 'thumbnailFile') }}" class="d-block mx-auto" width="500" alt="Photo de l'article">
 
-    {{ include('admin/article/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+    {{ include('admin/article/_form.html.twig', {'button_label': 'Modifier'}) }}
 
     <a href="{{ path('app_admin_article_index') }}" class="btn btn-warning my-2">Retour à la liste</a>
 
     {{ include('admin/article/_delete_form.html.twig') }}
     </div>
 </main>
-    
 {% endblock %}

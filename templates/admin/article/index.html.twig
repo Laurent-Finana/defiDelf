@@ -6,7 +6,12 @@
 {% block body %}
 	<main>
 		<div class="container mt-5 mb-4 pt-5">
-			<h1 class="mt-5 pt-5 text-center fw-bold">Liste des articles</h1>
+
+			<div class="mt-4 pt-4 text-center">
+				{{ include ('_partials/_flash_messages.html.twig')}}
+			</div>
+			
+			<h1 class="mt-4 pt-4 text-center fw-bold">Liste des articles</h1>
 			<a href="{{ path('app_admin_article_new') }}" class="btn btn-success">Nouvel article</a>
 			<table class="table mt-4">
 				<thead>

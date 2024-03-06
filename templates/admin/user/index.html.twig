@@ -1,0 +1,56 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+{% block title %}Liste des utilisateurs{% endblock %}
+
+{% block body %}
+<main>
+    <div class="container mt-5 mb-4 pt-5">
+
+        <div class="mt-4 pt-4 text-center">
+            {{ include('_partials/_flash_messages.html.twig') }}
+        </div>
+
+        <h1 class="my-4 pt-4 fw-bold text-center">Liste des utilisateurs</h1>
+        <a href="{{ path('app_admin_user_new') }}" class="btn btn-success">Nouvel utilisateur</a>
+
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Rôles</th>
+                    <th>Téléphone</th>
+                    <th>WhatsApp</th>
+                    <th>Nationalité</th>
+                    <th>Profession</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.lastname }}</td>
+                    <td>{{ user.firstname }}</td>
+                    <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                    <td>{{ user.phoneNumber }}</td>
+                    <td>{{ user.whatsApp }}</td>
+                    <td>{{ user.nationality }}</td>
+                    <td>{{ user.job }}</td>
+                    <td>
+                        <a href="{{ path('app_admin_user_show', {'id': user.id}) }}" class="btn btn-primary mb-1">Voir</a>
+                        <a href="{{ path('app_admin_user_edit', {'id': user.id}) }}" class="btn btn-warning">Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="11">Aucun utilisateur trouvé</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ path('app_admin_user_new') }}" class="btn btn-success">Nouvel utilisateur</a>
+    </div>
+</main>
+{% endblock %}
