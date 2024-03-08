@@ -18,7 +18,7 @@
                     <th>Titre</th>
                     <th>Fichier</th>
                     <th>Description</th>
-                    {# <th>Catégorie</th> #}
+                    <th>Catégorie</th>
                     <th>Créé le</th>
                     <th>Mise à jour le</th>
                     <th>Actions</th>
@@ -30,7 +30,7 @@
                     <td>{{ course.name }}</td>
                     <td>{{ course.file }}</td>
                     <td>{{ course.description }}</td>
-                    {# <td>{{ course.category }}</td> #}
+                    <td> {{ course.category.name | default('') }} </td>
                     <td>{{ course.createdAt ? course.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                     <td>{{ course.updatedAt ? course.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                     <td>

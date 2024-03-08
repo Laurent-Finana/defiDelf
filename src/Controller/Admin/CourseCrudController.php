@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Course;
 use App\Form\CourseType;
+use App\Repository\CategoryRepository;
 use App\Repository\CourseRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,10 +17,12 @@ use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
 class CourseCrudController extends AbstractController
 {
     #[Route('/', name: 'app_admin_course_index', methods: ['GET'])]
-    public function index(CourseRepository $courseRepository): Response
+    public function index(CourseRepository $courseRepository, CategoryRepository $categoryRepository): Response
     {
+        $courses = $courseRepository->findWithCategory();
+
         return $this->render('admin/course_crud/index.html.twig', [
-            'courses' => $courseRepository->findAll(),
+            'courses' => $courses,
         ]);
     }
 
@@ -29,7 +32,7 @@ class CourseCrudController extends AbstractController
         $course = new Course();
         $form = $this->createForm(CourseType::class, $course);
         $form->handleRequest($request);
-
+        
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($course);
             $entityManager->flush();

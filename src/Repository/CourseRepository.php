@@ -21,6 +21,16 @@ class CourseRepository extends ServiceEntityRepository
         parent::__construct($registry, Course::class);
     }
 
+
+    public function findWithCategory(): array
+    {
+        return $this->createQueryBuilder('cr')
+            ->select('cr', 'cg')
+            ->leftJoin('cr.category', 'cg')
+            ->getQuery()
+            ->getResult();
+    }
+
 //    /**
 //     * @return Course[] Returns an array of Course objects
 //     */
