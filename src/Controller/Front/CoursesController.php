@@ -2,6 +2,7 @@
 
 namespace App\Controller\Front;
 
+use App\Repository\CourseRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,8 +13,11 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 class CoursesController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(): Response
+    public function index(CourseRepository $course): Response
     {
-        return $this->render('front/display/courses/index.html.twig');
+        $courses = $course->findAll();
+        return $this->render('front/display/courses/index.html.twig', [
+            'courses' => $courses
+        ]);
     }
 }

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier le cours{% endblock %}
+
+{% block body %}
+<main>
+    <div class="container my-5 pt-5">
+        <h1 class="my-5 pt-5 fw-bold text-center">Modifier le cours</h1>
+
+        {{ include('admin/course_crud/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+        <a href="{{ path('app_admin_course_index') }}" class="btn btn-warning my-1">Retour liste</a>
+
+        {{ include('admin/course_crud/_delete_form.html.twig') }}
+    </div>
+</main>
+{% endblock %}

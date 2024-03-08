@@ -7,8 +7,12 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: CourseRepository::class)]
+#[Vich\Uploadable()]
 class Course
 {
     #[ORM\Id]
@@ -19,8 +23,12 @@ class Course
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $file = null;
+
+    #[Vich\UploadableField(mapping: 'courses', fileNameProperty: 'file')]
+    #[Assert\File()]
+    private ?File $fileFile = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
@@ -61,7 +69,7 @@ class Course
         return $this->file;
     }
 
-    public function setFile(string $file): static
+    public function setFile(?string $file): static
     {
         $this->file = $file;
 
@@ -124,6 +132,32 @@ class Course
     public function removeCategory(Category $category): static
     {
         $this->category->removeElement($category);
+
+        return $this;
+    }
+
+    /**
+     * Get the value of fileFile
+     */ 
+    public function getFileFile()
+    {
+        return $this->fileFile;
+    }
+
+    /**
+     * Set the value of fileFile
+     *
+     * @return  self
+     */ 
+    public function setFileFile($fileFile): static
+    {
+        $this->fileFile = $fileFile;
+
+        if (null !== $fileFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updated_at = new \DateTimeImmutable();
+        }
 
         return $this;
     }

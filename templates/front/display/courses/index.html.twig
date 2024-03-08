@@ -29,6 +29,14 @@
 				<h3 class="p-5">A retenir</h3>
 			</div>
 		</div>
+
+		<section>
+			{% for course in courses %}
+				<div>
+					<a href="{{ vich_uploader_asset(course, 'fileFile') }}">Vidéo</a>
+				</div>
+			{% endfor %}
+		</section>
 	</div>
 </main>
 {% endblock %}
