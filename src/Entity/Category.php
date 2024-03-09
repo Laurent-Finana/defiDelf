@@ -21,9 +21,13 @@ class Category
     #[ORM\ManyToMany(targetEntity: Course::class, mappedBy: 'category')]
     private Collection $courses;
 
+    #[ORM\ManyToMany(targetEntity: Course::class, inversedBy: 'categories')]
+    private Collection $course;
+
     public function __construct()
     {
         $this->courses = new ArrayCollection();
+        $this->course = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -68,5 +72,13 @@ class Category
         }
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, Course>
+     */
+    public function getCourse(): Collection
+    {
+        return $this->course;
     }
 }

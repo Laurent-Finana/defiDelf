@@ -30,7 +30,9 @@
                     <td>{{ course.name }}</td>
                     <td>{{ course.file }}</td>
                     <td>{{ course.description }}</td>
-                    <td> {{ course.category.name | default('') }} </td>
+                    {% for category in course.category %}
+                        <td class="d-grid">{{ category.name }}</td>
+                    {% endfor %}
                     <td>{{ course.createdAt ? course.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                     <td>{{ course.updatedAt ? course.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                     <td>
