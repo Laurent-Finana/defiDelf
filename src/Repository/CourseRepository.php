@@ -30,6 +30,18 @@ class CourseRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+    
+    public function findByCategory($cat): array
+    {
+        return $this->createQueryBuilder('cr')
+            ->select('cr', 'cg')
+            ->leftJoin('cr.category', 'cg')
+            ->andWhere('cg.id = :val')
+            ->setParameter('val', $cat)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 
 //    /**
 //     * @return Course[] Returns an array of Course objects

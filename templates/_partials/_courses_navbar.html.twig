@@ -8,16 +8,11 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a href="{{ path('app_presentation') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_presentation') %} text-white border-top border-white {% endif %}" aria-expanded="false">Qui sommes-nous ?</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ path('app_actions') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_actions') %} text-white border-top border-white {% endif %}" aria-expanded="false">Nos actions
+                            <a href="{{ path('app_courses_index') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_courses_index') %} text-white border-top border-white {% endif %}" aria-expanded="false">Mes cours
                             </a>
                         </li>
                         <li class="nav-item"><a href="{{ path('app_practice') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_practice') %} text-white border-top border-white {% endif %}">Entraînement DELF</a></li>
-                        <li class="nav-item"><a href="{{ path('app_news') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_news') %} text-white border-top border-white {% endif %}">Actualités</a></li>
-                        <li class="nav-item"><a href="{{ path('app_partners') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_partners') %} text-white border-top border-white {% endif %}">Partenaires</a></li>
-                        <li class="nav-item"><a href="{{ path('app_user_show', {id: app.user.id}) }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_contact') %} text-white border-top border-white {% endif %}">Mon compte</a></li>
+                        <li class="nav-item"><a href="{{ path('app_user_show', {id: app.user.id}) }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_user_show') %} text-white border-top border-white {% endif %}">Mon compte</a></li>
                     </ul>
                     <div>
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}

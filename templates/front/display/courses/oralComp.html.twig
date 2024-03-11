@@ -1,0 +1,27 @@
+{% extends "front/display/courses/courses_base.html.twig" %}
+
+{% block body %}
+<main>
+    <div class="container my-5 pt-5">
+        <h1 class="my-5 pt-5 fw-bold text-center">Compréhension orale</h1>
+        <div class="row">
+            {% for course in courses %}
+                <div class="col-12 mb-2 col-md-4 col-lg-3">
+                    <div class="card h-100 border-primary">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ course.name }}</h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">
+                                {% for category in course.category %}
+                                    {{ category.name }}
+                                {% endfor %}
+                            </h6>
+                            <p class="card-text">{{ course.description }}</p>
+                            <a href="{{ vich_uploader_asset(course, 'fileFile') }}" class="card-link">Voir le cours</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+{% endblock %}
