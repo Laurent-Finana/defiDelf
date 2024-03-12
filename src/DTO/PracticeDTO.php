@@ -42,6 +42,6 @@ class PracticeDTO
     #[Assert\Length(max: 200)]
     public string $city = '';
 
-    #[Assert\Count(min: 1, max: 2, minMessage: 'Vous devez sélectionner au moins 1 compétence', maxMessage: 'Vous ne pouvez sélectionner plus de 2 compétences')]
+    #[Assert\Count(min: 1, max: 2, minMessage: 'Vous devez sélectionner au moins 1 compétence', maxMessage: 'Vous ne pouvez pas sélectionner plus de 2 compétences')]
     public array $level = [];
 }

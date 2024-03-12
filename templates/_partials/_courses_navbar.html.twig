@@ -1,7 +1,7 @@
     <header class="">
         <nav class="navbar navbar-expand-lg fixed-top shadow">
             <div class="container">
-                <a class="navbar-brand fs-6" href="{{ path('app_homepage') }}"><img src="{{ asset('assets/images/logo2.png') }}" alt="logo défi DELF" width="120" height="100"></a>
+                <a class="navbar-brand fs-6 text-white" href="{{ path('app_homepage') }}"><img src="{{ asset('assets/images/logo2.png') }}" alt="logo défi DELF" width="120" height="100"><i class="bi bi-house-fill fs-3 text-white"></i></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -12,19 +12,17 @@
                             </a>
                         </li>
                         <li class="nav-item"><a href="{{ path('app_practice') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_practice') %} text-white border-top border-white {% endif %}">Entraînement DELF</a></li>
-                        <li class="nav-item"><a href="{{ path('app_user_show', {id: app.user.id}) }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_user_show') %} text-white border-top border-white {% endif %}">Mon compte</a></li>
                     </ul>
                     <div>
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                            <a href="{{ path('app_logout') }}" class="nav-link text-info border border-info rounded p-1 text-center">Déconnexion</a>
+                            <a href="{{ path('app_logout') }}" class="nav-link text-black bg-white bg-opacity-75 fw-bold rounded text-center">Déconnexion</a>
                             {% if is_granted('ROLE_APPRENANT') %}
-                                <a href="{{ path('app_courses_index') }}" class="mt-2 p-1 nav-link text-secondary border border-white bg-white rounded text-center">Zone apprenant</a>
+                                <a href="{{ path('app_courses_index') }}" class="px-1 mt-2 nav-link text-black bg-info bg-opacity-50 fw-bold rounded text-center">Zone apprenant</a>
                             {% endif %}
                             {% if is_granted('ROLE_PROF') %}
-                                <a href="{{ path('app_admin_home') }}" class="mt-2 p-1 nav-link text-success border border-warning rounded bg-warning text-center">Zone d'administration</a>
+                                <a href="{{ path('app_admin_home') }}" class="px-1 mt-2 nav-link text-black bg-danger bg-opacity-75 fw-bold rounded text-center">Zone d'administration</a>
                             {% endif %}
-                        {% else %}
-                            <a href="{{ path('app_login') }}" class="nav-link text-info border border-info rounded p-1 text-center">Accès membre</a>
+                            <a href="{{ path('app_user_show', {id: app.user.id}) }}" class="mt-2 nav-link text-black bg-success bg-opacity-75 fw-bold text-center rounded">Mon compte</a>
                         {% endif %}
                     </div>
                 </div>
