@@ -50,6 +50,7 @@ class Course
     {
         $this->category = new ArrayCollection();
         $this->categories = new ArrayCollection();
+        $this->created_at = new \DateTimeImmutable('now');
     }
 
     public function getId(): ?int

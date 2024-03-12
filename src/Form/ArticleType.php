@@ -40,9 +40,6 @@ class ArticleType extends AbstractType
             ->add('thumbnailPressFile', FileType::class, [
                 'label' => 'Fichier image presse'
             ])
-            ->add('created_at', DateTimeType::class, [
-                'label' => 'Créé le :'
-            ])
         ;
     }
 
