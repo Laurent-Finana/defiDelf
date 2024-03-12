@@ -25,7 +25,7 @@
 							<td>{{ planning.DelfB1 }}</td>
 							<td>{{ planning.DelfB2 }}</td>
                             <td>
-								<a href="{{ path('app_admin_planning_show', {'id': planning.id}) }}" class="btn btn-warning mb-1">Voir</a>
+								<a href="{{ path('app_admin_planning_show', {'id': planning.id}) }}" class="btn btn-primary mb-1">Voir</a>
 								<a href="{{ path('app_admin_planning_edit', {'id': planning.id}) }}" class="btn btn-warning mb-1">Modifier</a>
 								{{ include('admin/planning/_delete_form.html.twig') }}
 							</td>

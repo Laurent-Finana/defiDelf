@@ -3,11 +3,10 @@
 namespace App\Form;
 
 use App\Entity\Article;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -24,7 +23,7 @@ class ArticleType extends AbstractType
                 'label' => 'Titre',
                 'empty_data' => ''
             ])
-            ->add('content',TextareaType::class, [
+            ->add('content',CKEditorType::class, [
                 'label' => 'Contenu',
                 'empty_data' => ''
             ])
