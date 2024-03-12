@@ -68,7 +68,7 @@ class PracticeType extends AbstractType
                 'expanded' => true,
                 'attr' => ['class' => 'text-info fw-bold'],
                 'label_attr' => [
-                    'class' => 'checkbox-inline',
+                    'class' => 'checkbox-inline form-check-inline',
                 ]
             ])
             ->add('save', SubmitType::class, [

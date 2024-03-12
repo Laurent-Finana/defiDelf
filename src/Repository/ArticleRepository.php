@@ -21,6 +21,20 @@ class ArticleRepository extends ServiceEntityRepository
         parent::__construct($registry, Article::class);
     }
 
+     /**
+     * @return Article[] Returns an array of Article objects
+     */
+    public function findByActuality($value): array
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.actuality = :val')
+            ->setParameter('val', $value)
+            ->orderBy('a.id', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     /**
      * @return Article[] Returns an array of Article objects
      */
@@ -28,6 +42,20 @@ class ArticleRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('a')
             ->andWhere('a.press = :val')
+            ->setParameter('val', $value)
+            ->orderBy('a.id', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+     /**
+     * @return Article[] Returns an array of Article objects
+     */
+    public function findByAction($value): array
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.action = :val')
             ->setParameter('val', $value)
             ->orderBy('a.id', 'ASC')
             ->getQuery()

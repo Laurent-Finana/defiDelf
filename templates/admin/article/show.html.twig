@@ -20,8 +20,18 @@
                 <td>{{ article.content }}</td>
             </tr>
             <tr>
-                <th>Presse</th>
-                <td>{{ article.press ? 'Yes' : 'No' }}</td>
+                <th>Catégorie</th>
+                {% if article.press %}
+                    <td>Presse</td>
+                {% elseif article.action %}
+                    <td>Action</td>
+                {% else %}
+                    <td>Actualités</td>
+                {% endif %}
+            </tr>
+             <tr>
+                <th>Lien externe</th>
+                <td>{{ article.externalLink }}</td>
             </tr>
             <tr>
                 <th>Créé le</th>

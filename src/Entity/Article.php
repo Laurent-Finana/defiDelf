@@ -27,7 +27,7 @@ class Article
     private ?string $content = null;
 
     #[ORM\Column]
-    private ?bool $press = null;
+    private ?bool $press = false;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $created_at = null;
@@ -51,6 +51,12 @@ class Article
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $thumbnailPress = null;
+
+    #[ORM\Column]
+    private ?bool $action = false;
+
+    #[ORM\Column]
+    private ?bool $actuality = false;
 
     public function __construct()
     {
@@ -214,6 +220,30 @@ class Article
     public function setThumbnailPress(?string $thumbnailPress): static
     {
         $this->thumbnailPress = $thumbnailPress;
+
+        return $this;
+    }
+
+    public function isAction(): ?bool
+    {
+        return $this->action;
+    }
+
+    public function setAction(bool $action): static
+    {
+        $this->action = $action;
+
+        return $this;
+    }
+
+    public function isActuality(): ?bool
+    {
+        return $this->actuality;
+    }
+
+    public function setActuality(bool $actuality): static
+    {
+        $this->actuality = $actuality;
 
         return $this;
     }

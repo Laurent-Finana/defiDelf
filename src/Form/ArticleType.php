@@ -28,11 +28,18 @@ class ArticleType extends AbstractType
                 'label' => 'Contenu',
                 'empty_data' => ''
             ])
+            ->add('actuality', CheckboxType::class, [
+                'label' => 'Actualités',
+                'required' => false,
+               ])
             ->add('press', CheckboxType::class, [
                 'label' => 'Presse',
-                'data' => false,
-                'required' => false
+                'required' => false,
                ])
+            ->add('action', CheckboxType::class, [
+            'label' => 'Action',
+            'required' => false,
+            ])
             ->add('external_link', TextType::class, [
                 'label' => 'Lien externe',
                 'empty_data' => ''
