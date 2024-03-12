@@ -47,12 +47,18 @@ class RegistrationFormType extends AbstractType
                 'first_options'  => [
                     'label' => 'Mot de passe(*)',
                     'hash_property_path' => 'password',
+                    'toggle' => true,
+                    'hidden_label' => 'Masquer',
+                    'visible_label' => 'Afficher',
                     'attr' => [
                         'placeholder' => 'Choisissez un mot de passe',
                     ]
                 ],
                 'second_options' => [
                     'label' => 'Confirmation du mot de passe(*)',
+                    'toggle' => true,
+                    'hidden_label' => 'Masquer',
+                    'visible_label' => 'Afficher',
                     'attr' => [
                         'placeholder' => 'Confirmez votre mot de passe',
                     ]

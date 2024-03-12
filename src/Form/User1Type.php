@@ -43,27 +43,11 @@ class User1Type extends AbstractType
                                 "Le mot de passe doit contenir au minimum 8 caractères, une majuscule, un chiffre et un caractère spécial"
                             ),
                         ],
+                        'toggle' => true,
+                        'hidden_label' => 'Masquer',
+                        'visible_label' => 'Afficher',
                     ]);
-                } else {
-                    // New
-                    $form->add('password', PasswordType::class, [
-                        'label' => 'Mot de passe',
-                        'empty_data' => '',
-                        // Constraints which was on Entity are declared below
-                        'constraints' => [
-                            new NotBlank([
-                                'message' => 'Merci d\'entrer un mot de passe',
-                            ]),
-                            new Regex(
-                                '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*\-+_\.\/]).{8,}$/',
-                                "Le mot de passe doit contenir au minimum 8 caractères, une majuscule, un chiffre et un caractère spécial"
-                            ),
-                            new Length([
-                                'max' => 4096,
-                            ]),
-                        ],
-                    ]);
-                }
+                } 
             })
             ->add('lastname', TextType::class, [
                 'empty_data' => '',

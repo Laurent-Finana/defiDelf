@@ -59,7 +59,9 @@ class UserType extends AbstractType
                                 "Le mot de passe doit contenir au minimum 8 caractères, une majuscule, un chiffre et un caractère spécial"
                             ),
                         ],
-
+                        'toggle' => true,
+                        'hidden_label' => 'Masquer',
+                        'visible_label' => 'Afficher',
                     ]);
                 } else {
                     // New
@@ -79,6 +81,9 @@ class UserType extends AbstractType
                                 'max' => 4096,
                             ]),
                         ],
+                        'toggle' => true,
+                        'hidden_label' => 'Masquer',
+                        'visible_label' => 'Afficher',
                     ]);
                 }
             })

@@ -25,7 +25,7 @@
                 </tr>
             </thead>
             <tbody>
-            {% for course in courses %}
+            {% for course in courses | reverse %}
                 <tr>
                     <td>{{ course.name }}</td>
                     <td>{{ course.file }}</td>

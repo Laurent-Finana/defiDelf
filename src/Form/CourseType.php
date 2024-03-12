@@ -29,9 +29,6 @@ class CourseType extends AbstractType
                 'label' => 'Description',
                 'empty_data' => ''
             ])
-            ->add('created_at', DateTimeType::class, [
-                'label' => 'Créé le :'
-            ])
             ->add('category', EntityType::class, [
                 'class' => Category::class,
                 'choice_label' => 'name',
