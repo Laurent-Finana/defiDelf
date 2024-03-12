@@ -21,6 +21,7 @@ class Course
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank([], 'Merci d\'indiquer le titre du cours')]
     private ?string $name = null;
 
     #[ORM\Column(length: 255, nullable: true)]

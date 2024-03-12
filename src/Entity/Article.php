@@ -19,9 +19,11 @@ class Article
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank([], 'Merci de renseigner le titre de l\'article')]
     private ?string $title = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank([], 'Merci d\'écrire le contenu de l\'article')]
     private ?string $content = null;
 
     #[ORM\Column]
