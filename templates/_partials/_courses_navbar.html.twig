@@ -15,14 +15,14 @@
                     </ul>
                     <div>
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                            <a href="{{ path('app_logout') }}" class="nav-link text-black bg-white bg-opacity-75 fw-bold rounded text-center">Déconnexion</a>
+                            <a href="{{ path('app_logout') }}" class="nav-link text-white bg-white bg-opacity-75 rounded text-center">Déconnexion</a>
                             {% if is_granted('ROLE_APPRENANT') %}
-                                <a href="{{ path('app_courses_index') }}" class="px-1 mt-2 nav-link text-black bg-info bg-opacity-50 fw-bold rounded text-center">Zone apprenant</a>
+                                <a href="{{ path('app_courses_index') }}" class="px-1 mt-2 nav-link text-white bg-info bg-opacity-50 rounded text-center">Zone apprenant</a>
                             {% endif %}
                             {% if is_granted('ROLE_PROF') %}
-                                <a href="{{ path('app_admin_home') }}" class="px-1 mt-2 nav-link text-black bg-danger bg-opacity-75 fw-bold rounded text-center">Zone d'administration</a>
+                                <a href="{{ path('app_admin_home') }}" class="px-1 mt-2 nav-link text-white bg-highLighterPink rounded text-center">Zone d'administration</a>
                             {% endif %}
-                            <a href="{{ path('app_user_show', {id: app.user.id}) }}" class="mt-2 nav-link text-black bg-success bg-opacity-75 fw-bold text-center rounded">Mon compte</a>
+                            <a href="{{ path('app_user_show', {id: app.user.id}) }}" class="mt-2 nav-link text-white bg-greenSea bg-opacity-75 text-center rounded">Mon compte</a>
                         {% endif %}
                     </div>
                 </div>

@@ -31,6 +31,30 @@ nav, footer {
     color: white;
   }
 
+  .bg-greenSea {
+    background-color: #16a085;
+  }
+
+  .bg-belizeHole {
+    background-color: #2980b9;
+  }
+
+  .bg-amethyst {
+    background-color: #9b59b6;
+  }
+
+  .bg-highLighterPink {
+    background-color: #ef5777;
+  }
+
+  .bg-londonSquare {
+    background-color: #808e9b;
+  }
+
+  .bg-spiceNectarine {
+    background-color: #ffbe76;
+  }
+
 .zoom {
     transition: transform 0.3s;
 }
