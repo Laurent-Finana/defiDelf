@@ -1,0 +1,78 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  nav, footer {
+      background-color: #004AAD;
+      color: #ffc107;
+    }
+  
+    footer a{
+      color: #ffc107;
+    }
+  
+    footer a:hover {
+      color: white;
+    }
+    
+    main h1 {
+      color: #84197c;
+    }
+    
+    main h2 {
+      color: #444444;
+    }
+    
+    .nav-item a{
+      color:  #ffc107;
+    }
+  
+    .nav-item a:hover {
+      color: white;
+    }
+  
+    .bg-greenSea {
+      background-color: #16a085;
+    }
+  
+    .bg-belizeHole {
+      background-color: #2980b9;
+    }
+  
+    .bg-amethyst {
+      background-color: #9b59b6;
+    }
+  
+    .bg-highLighterPink {
+      background-color: #ef5777;
+    }
+  
+    .bg-londonSquare {
+      background-color: #808e9b;
+    }
+  
+    .bg-spiceNectarine {
+      background-color: #ffbe76;
+    }
+  
+  .zoom {
+      transition: transform 0.3s;
+  }
+  
+  .zoom:hover {
+      transform: scale(1.1);
+      z-index: 10;
+    }
+    
+    /* .card {
+      transition: transform 0.3s;
+    }
+    
+    .card:hover {
+      transform: scale(1.1);
+      z-index: 10;
+    } */
+   .justify {
+    text-align: justify;
+   }
+  
