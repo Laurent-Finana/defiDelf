@@ -172,9 +172,7 @@
                     <div class="container">
                         <h1 class="text-center fw-bold mb-4 mb-md-0">La presse parle de nous</h1>
                             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 pt-5 g-3">          
-
                                 {% for article in articles %}
-                                    
                                     <div class="col">
                                         <div class="card zoom shadow rounded-4 h-100">
                                             <img class="rounded-top-4" src="{{ vich_uploader_asset(article, 'thumbnailFile') }}" alt="" />
@@ -186,39 +184,11 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 {% endfor %}
-
-                               {#  <div class="col">
-                                    <div class="card zoom shadow rounded-4 h-100">
-                                        <img class="rounded-top-4" src="{{ asset('assets/images/vue_ensemble.jpg') }}" alt="photo journal" />
-                                        <div class="card-body">
-                                            <p class="card-text">Ils se préparent à passer leur diplôme en langue française</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <small class="text-body-secondary">L'Est Eclair</small>
-                                                <p><a href="{{ asset('assets/images/journal_15-10-2023.jpg')}}" class="link-underline-primary">Lire la suite >></a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                <div class="card zoom shadow rounded-4 h-100">
-                                    <img class="rounded-top-4" src="{{ asset('assets/images/remise.jpg') }}" alt="photo journal" />
-                                    <div class="card-body">
-                                        <p class="card-text">Venus de 11 pays avec la même soif d'apprendre</p>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <small class="text-body-secondary">10 juillet 2023</small>
-                                            <p><a href="{{ asset('assets/images/presse_10_07_2023.jpg')}}" class="link-underline-primary">Lire la suite >></a></p>
-                                        </div>
-                                    </div>
-                                </div> #}
-                                
                             </div>
                     </div>
                 </div>
             </section>
         </div>
     </main>
-
 {% endblock %}

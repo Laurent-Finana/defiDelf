@@ -29,6 +29,7 @@ class CourseType extends AbstractType
                 'empty_data' => ''
             ])
             ->add('category', EntityType::class, [
+                'label' => 'Catégorie',
                 'class' => Category::class,
                 'choice_label' => 'name',
                 'multiple' => true,
