@@ -29,7 +29,7 @@
 						<tr>
 							<td><img src="{{ vich_uploader_asset(article, 'thumbnailFile') }}" width="150" alt="photo article"></td>
 							<td>{{ article.title }}</td>
-							<td>{{ article.content }}</td>
+							<td>{{ article.content | raw}}</td>
 							{% if article.press %}
 								<td>Presse</td>
 							{% elseif article.action %}
