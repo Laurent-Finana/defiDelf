@@ -19,9 +19,10 @@ use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
 class CourseCrudController extends AbstractController
 {
     #[Route('/', name: 'app_admin_course_index', methods: ['GET'])]
-    public function index(CourseRepository $courseRepository, CategoryRepository $categoryRepository): Response
+    public function index(CourseRepository $courseRepository, CategoryRepository $categoryRepository, Request $request): Response
     {
-        $courses = $courseRepository->findWithCategory();
+        $page = $request->query->getInt('page', 1);
+        $courses = $courseRepository->paginateArticles($page);
 
         return $this->render('admin/course_crud/index.html.twig', [
             'courses' => $courses,

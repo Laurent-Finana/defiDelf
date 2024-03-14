@@ -11,9 +11,9 @@
         </div>
 
         <h1 class="my-4 pt-4 fw-bold text-center">Liste des utilisateurs</h1>
-        <a href="{{ path('app_admin_user_new') }}" class="btn btn-success">Nouvel utilisateur</a>
-
-        <table class="table mt-4">
+        <a href="{{ path('app_admin_user_new') }}" class="btn btn-success mb-2">Nouvel utilisateur</a>
+        {{ knp_pagination_render(users) }}
+        <table class="table">
             <thead>
                 <tr>
                     <th>Email</th>
@@ -50,6 +50,7 @@
             {% endfor %}
             </tbody>
         </table>
+        {{ knp_pagination_render(users) }}
         <a href="{{ path('app_admin_user_new') }}" class="btn btn-success">Nouvel utilisateur</a>
     </div>
 </main>

@@ -18,10 +18,12 @@ use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
 class ArticleController extends AbstractController
 {
     #[Route('/', name: 'app_admin_article_index', methods: ['GET'])]
-    public function index(ArticleRepository $articleRepository): Response
+    public function index(ArticleRepository $articleRepository, Request $request): Response
     {
+        $page = $request->query->getInt('page', 1);
+        $articles = $articleRepository->paginateArticles($page);
         return $this->render('admin/article/index.html.twig', [
-            'articles' => $articleRepository->findAll(),
+            'articles' => $articles,
         ]);
     }
 

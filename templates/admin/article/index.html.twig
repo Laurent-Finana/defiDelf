@@ -12,8 +12,9 @@
 			</div>
 			
 			<h1 class="mt-4 pt-4 text-center fw-bold">Liste des articles</h1>
-			<a href="{{ path('app_admin_article_new') }}" class="btn btn-success">Nouvel article</a>
-			<table class="table mt-4">
+			<a href="{{ path('app_admin_article_new') }}" class="btn btn-success mb-2">Nouvel article</a>
+			{{ knp_pagination_render(articles) }}
+			<table class="table">
 				<thead>
 					<tr>
 						<th>Image</th>
@@ -50,6 +51,7 @@
 					{% endfor %}
 				</tbody>
 			</table>
+			{{ knp_pagination_render(articles) }}
 			<a href="{{ path('app_admin_article_new') }}" class="btn btn-success">Nouvel article</a>
 		</div>
 	</main>

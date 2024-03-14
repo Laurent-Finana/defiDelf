@@ -5,6 +5,8 @@ namespace App\Repository;
 use App\Entity\Course;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Knp\Component\Pager\Pagination\PaginationInterface;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * @extends ServiceEntityRepository<Course>
@@ -16,20 +18,29 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class CourseRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(ManagerRegistry $registry, private PaginatorInterface $paginator)
     {
         parent::__construct($registry, Course::class);
     }
 
+    public function paginateArticles(int $page): PaginationInterface
+    {
+        return $this->paginator->paginate(
+            $this->createQueryBuilder('cr'),
+            $page,
+            10
+        );
+    }
 
-    public function findWithCategory(): array
+
+    /* public function findWithCategory(): array
     {
         return $this->createQueryBuilder('cr')
             ->select('cr', 'cg')
             ->leftJoin('cr.category', 'cg')
             ->getQuery()
             ->getResult();
-    }
+    } */
     
     public function findByCategory($cat): array
     {

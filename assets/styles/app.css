@@ -7,6 +7,10 @@ nav, footer {
     color: #ffc107;
   }
 
+  main > div > nav {
+    background-color: transparent;
+  }
+
   footer a{
     color: #ffc107;
   }

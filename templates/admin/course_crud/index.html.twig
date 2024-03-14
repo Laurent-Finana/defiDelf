@@ -11,8 +11,8 @@
 		</div>
 
         <h1 class="my-4 pt-4 fw-bold text-center">Liste des cours</h1>
-        <a href="{{ path('app_admin_course_new') }}" class="btn btn-success">Ajouter un cours</a>
-
+        <a href="{{ path('app_admin_course_new') }}" class="btn btn-success mb-2">Ajouter un cours</a>
+        {{ knp_pagination_render(courses) }}
         <table class="table">
             <thead>
                 <tr>
@@ -48,7 +48,7 @@
             {% endfor %}
             </tbody>
         </table>
-
+        {{ knp_pagination_render(courses) }}
         <a href="{{ path('app_admin_course_new') }}" class="btn btn-success">Ajouter un cours</a>
     </div>
 </main>
