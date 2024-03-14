@@ -7,7 +7,7 @@
     <main>
         <div class="container">
             <section class="mt-5 py-5">
-                <h1 class="mt-5 pt-5 text-center fw-bold mb-4 mb-md-0">Présentation - Projet pédagogique</h1>
+                <h1 class="mt-5 pt-5 text-center fw-bold mb-4 mb-md-0" id="projet">Présentation - Projet pédagogique</h1>
                 <div class="row mt-3 pt-5 gy-4 align-items-center px-2 px-md-0">
                     <div class="col-12 col-md-6 text-center border border-warning rounded p-3 shadow-lg offset-md-1 zoom">
                         <a data-bs-toggle="modal" data-bs-target="#modalNew" type="button">
@@ -123,7 +123,7 @@
             </section>
 
             <section class="py-5">
-                <h1 class="text-center fw-bold mb-3">Paroles de bénévoles</h1>
+                <h1 class="text-center fw-bold mb-3" id="parole">Paroles de bénévoles</h1>
                 <div class="row pt-5 gy-4 align-items-center">
                     <div class="col-12 col-md-6">
                         <img src="{{ asset ('assets/images/georges.jpg') }}" class="d-block mx-auto border border-success border-4 border-opacity-50 rounded-4 shadow-lg" width="350" height="300" alt="photo de Georges" >
@@ -170,7 +170,7 @@
             <section class="py-5">
                 <div class="album pb-5">
                     <div class="container">
-                        <h1 class="text-center fw-bold mb-4 mb-md-0">La presse parle de nous</h1>
+                        <h1 class="text-center fw-bold mb-4 mb-md-0" id="presse">La presse parle de nous</h1>
                             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 pt-5 g-3">          
                                 {% for article in articles %}
                                     <div class="col">

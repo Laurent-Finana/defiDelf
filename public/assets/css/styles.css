@@ -31,6 +31,14 @@ nav, footer {
     color: white;
   }
 
+/****DROPDOWN NAVBAR ****/
+@media (min-width: 576px) {
+  .dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+}
+
   .bg-greenSea {
     background-color: #16a085;
   }
