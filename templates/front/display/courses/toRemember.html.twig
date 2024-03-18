@@ -15,7 +15,7 @@
                                     {{ category.name }}
                                 {% endfor %}
                             </h6>
-                            <p class="card-text">{{ course.description }}</p>
+                            <p class="card-text">{{ course.description | raw }}</p>
                             <a href="{{ vich_uploader_asset(course, 'fileFile') }}" class="card-link" target="_blank">Voir le cours</a>
                         </div>
                     </div>
