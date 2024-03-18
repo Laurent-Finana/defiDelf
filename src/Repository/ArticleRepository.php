@@ -45,7 +45,7 @@ class ArticleRepository extends ServiceEntityRepository
             ->getResult()
             ,
             $page,
-            4
+            5
         );
     }
 
