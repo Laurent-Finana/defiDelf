@@ -9,6 +9,9 @@
 			<h1 class="mt-5 pt-5 text-center fw-bold">{{ article.title }}</h1>
             <img src="{{ vich_uploader_asset(article, 'thumbnailFile') }}" class="d-block mx-auto mt-5" width="500" alt="Photo de l'article">
             <p class="mt-5 d-block mx-auto justify w-75">{{ article.content | raw | nl2br }}</p>
+			<div class="d-flex justify-content-end">
+				<a href="{{ path('app_news') }}" class="text-decoration-none border rounded p-2 mt-2 bg-primary text-white">Retour</a>
+			</div>
 		</div>
 	</main>
 {% endblock %}
