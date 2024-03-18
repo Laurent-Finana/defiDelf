@@ -32,6 +32,21 @@ class ArticleRepository extends ServiceEntityRepository
         );
     }
 
+    public function paginateArticlesByActuality(int $page, $value): PaginationInterface
+    {
+        return $this->paginator->paginate(
+            $this->createQueryBuilder('a')
+            ->andWhere('a.actuality = :val')
+            ->setParameter('val', $value)
+            ->orderBy('a.id', 'ASC')
+            ->getQuery()
+            ->getResult()
+            ,
+            $page,
+            4
+        );
+    }
+
      /**
      * @return Article[] Returns an array of Article objects
      */

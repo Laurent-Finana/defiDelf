@@ -5,6 +5,7 @@ namespace App\Controller\Front;
 use App\Entity\Article;
 use App\Repository\ArticleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -36,10 +37,10 @@ class DisplayController extends AbstractController
     }
 
     #[Route('/actualites', name: 'app_news')]
-    public function news(ArticleRepository $articleRepository): Response
+    public function news(ArticleRepository $articleRepository, Request $request): Response
     {
-        $articles = $articleRepository->findByActuality(true);
-
+        $page = $request->query->getInt('page', 1);
+        $articles = $articleRepository->paginateArticlesByActuality($page, true);
         return $this->render('front/display/news.html.twig', [
             "articles" => $articles
         ]);
