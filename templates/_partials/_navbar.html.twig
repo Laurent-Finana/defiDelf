@@ -8,7 +8,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle {% if (app.request.attributes.get('_route') == 'app_presentation') %} text-white border-top border-white {% endif %}" href="{{ path('app_presentation') }}" roel="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle {% if (app.request.attributes.get('_route') == 'app_presentation') %} text-white border-top border-white {% endif %}" href="{{ path('app_presentation') }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Qui sommes-nous ?
                             </a>
                             <ul class="dropdown-menu bg-secondary">
@@ -20,7 +20,15 @@
                         <li class="nav-item"><a href="{{ path('app_actions') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_actions') %} text-white border-top border-white {% endif %}" aria-expanded="false">Nos actions
                             </a>
                         </li>
-                        <li class="nav-item"><a href="{{ path('app_practice') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_practice') %} text-white border-top border-white {% endif %}">Entraînement DELF</a></li>
+
+                        <li class="nav-item dropdown">
+                            <a href="{{ path('app_practice') }}" class="nav-link dropdown-toggle {% if (app.request.attributes.get('_route') == 'app_practice') %} text-white border-top border-white {% endif %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">Entraînement DELF</a>
+                            <ul class="dropdown-menu bg-secondary">
+                                <li><a href="{{ path('app_practice') }}#presentation" class="dropdown-item text-warning">Présentation</a></li>
+                                <li><a href="{{ path('app_practice') }}#inscription" class="dropdown-item text-warning">Inscription</a></li>
+                            </ul>
+                        </li>
+
                         <li class="nav-item"><a href="{{ path('app_news') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_news') %} text-white border-top border-white {% endif %}">Actualités</a></li>
                         <li class="nav-item"><a href="{{ path('app_partners') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_partners') %} text-white border-top border-white {% endif %}">Partenaires</a></li>
                         <li class="nav-item"><a href="{{ path('app_contact') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_contact') %} text-white border-top border-white {% endif %}">Contact</a></li>
