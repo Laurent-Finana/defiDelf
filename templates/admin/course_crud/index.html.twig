@@ -31,7 +31,14 @@
                 <tr>
                     <td>{{ course.name }}</td>
                     <td>{{ course.file }}</td>
-                    <td>{{ course.description | raw }}</td>
+
+                    {% if course.description | length > 100 %}
+                        {% set cut = course.description | slice(0, 100) ~ '(...)' %}
+                        <td>{{ cut | raw }}</td>
+                    {% else %}
+						<td>{{ course.description | raw }}</td>
+					{% endif %}
+
                     {% for category in course.category %}
                         <td class="d-grid">{{ category.name }}</td>
                     {% endfor %}

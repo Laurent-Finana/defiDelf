@@ -48,7 +48,7 @@ class Course
     private Collection $categories;
 
     #[ORM\Column]
-    private ?bool $active = false;
+    private ?bool $active = true;
 
     public function __construct()
     {

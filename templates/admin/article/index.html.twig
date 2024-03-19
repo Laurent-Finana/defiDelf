@@ -30,7 +30,14 @@
 						<tr>
 							<td><img src="{{ vich_uploader_asset(article, 'thumbnailFile') }}" width="150" alt="photo article"></td>
 							<td>{{ article.title }}</td>
-							<td>{{ article.content | raw}}</td>
+
+							{% if article.content | length > 200 %}
+								{% set cut = article.content | slice(0, 200) ~ '(...)' %}
+								<td>{{ cut | raw}}</td>
+							{% else %}
+								<td>{{ article.content | raw }}</td>
+							{% endif %}
+
 							{% if article.press %}
 								<td>Presse</td>
 							{% elseif article.action %}
@@ -38,6 +45,7 @@
 							{% else %}
 								<td>Actualités</td>
 							{% endif %}
+
 							<td>{{ article.createdAt ? article.createdAt|date('d-m-Y H:i:s') : '' }}</td>
 							<td>
 								<a href="{{ path('app_admin_article_show', {'id': article.id}) }}" class="btn btn-primary mb-1">Voir</a>
