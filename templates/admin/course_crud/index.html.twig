@@ -20,6 +20,7 @@
                     <th>Fichier</th>
                     <th>Description</th>
                     <th>Catégorie</th>
+                    <th>Visible</th>
                     <th>Créé le</th>
                     <th>Mise à jour le</th>
                     <th>Actions</th>
@@ -34,8 +35,13 @@
                     {% for category in course.category %}
                         <td class="d-grid">{{ category.name }}</td>
                     {% endfor %}
-                    <td>{{ course.createdAt ? course.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                    <td>{{ course.updatedAt ? course.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>
+                        <div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="switch{{ course.id }}" {{ course.active ? "checked" : "" }} disabled>
+						</div>
+                    </td>
+                    <td>{{ course.createdAt ? course.createdAt|date('d-m-Y H:i:s') : '' }}</td>
+                    <td>{{ course.updatedAt != course.createdAt ? course.updatedAt|date('d-m-Y H:i:s', 'Europe/Paris') : '' }}</td>
                     <td>
                         <a href="{{ path('app_admin_course_show', {'id': course.id}) }}" class="btn btn-primary mb-1">Voir</a>
                         <a href="{{ path('app_admin_course_edit', {'id': course.id}) }}" class="btn btn-warning">Modifier</a>

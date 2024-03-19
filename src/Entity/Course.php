@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\CourseRepository;
+use DateTimeZone;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
@@ -46,11 +47,14 @@ class Course
     #[ORM\ManyToMany(targetEntity: Category::class, mappedBy: 'course')]
     private Collection $categories;
 
+    #[ORM\Column]
+    private ?bool $active = false;
+
     public function __construct()
     {
         $this->category = new ArrayCollection();
         $this->categories = new ArrayCollection();
-        $this->created_at = new \DateTimeImmutable('now');
+        $this->created_at = new \DateTimeImmutable('now', new DateTimeZone('Europe/Paris'));
     }
 
     public function getId(): ?int
@@ -174,5 +178,17 @@ class Course
     public function getCategories(): Collection
     {
         return $this->categories;
+    }
+
+    public function isActive(): ?bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(bool $active): static
+    {
+        $this->active = $active;
+
+        return $this;
     }
 }

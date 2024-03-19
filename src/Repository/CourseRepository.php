@@ -48,6 +48,7 @@ class CourseRepository extends ServiceEntityRepository
             ->select('cr', 'cg')
             ->leftJoin('cr.category', 'cg')
             ->andWhere('cg.id = :val')
+            ->andWhere('cr.active = true')
             ->setParameter('val', $cat)
             ->getQuery()
             ->getResult()

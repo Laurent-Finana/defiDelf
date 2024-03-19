@@ -22,6 +22,16 @@
                     <td>{{ course.description | raw }}</td>
                 </tr>
                 <tr>
+                    <th>Catégorie</th>
+                    {% for category in course.category %}
+                        <td class="d-grid">{{ category.name }}</td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <th>Visible</th>
+                    <td>{{ course.active }}</td>
+                </tr>
+                <tr>
                     <th>Créé le</th>
                     <td>{{ course.createdAt ? course.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 </tr>
