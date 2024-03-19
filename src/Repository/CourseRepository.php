@@ -26,9 +26,11 @@ class CourseRepository extends ServiceEntityRepository
     public function paginateArticles(int $page): PaginationInterface
     {
         return $this->paginator->paginate(
-            $this->createQueryBuilder('cr'),
+            $this->createQueryBuilder('cr')
+            ->orderBy('cr.id', 'DESC')
+            ,
             $page,
-            10
+            5
         );
     }
 
