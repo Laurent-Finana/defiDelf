@@ -4,6 +4,7 @@ namespace App\Controller\Front;
 
 use App\Entity\Article;
 use App\Repository\ArticleRepository;
+use App\Repository\PartnerRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -42,7 +43,7 @@ class DisplayController extends AbstractController
         $page = $request->query->getInt('page', 1);
         $articles = $articleRepository->paginateArticlesByActuality($page, true);
         return $this->render('front/display/news.html.twig', [
-            "articles" => $articles
+            'articles' => $articles
         ]);
     }
 
@@ -50,14 +51,18 @@ class DisplayController extends AbstractController
     public function newsShow(Article $article): Response
     {
         return $this->render('front/display/news_show.html.twig', [
-            "article" => $article
+            'article' => $article
         ]);
     }
 
     #[Route('/partenaires', name: 'app_partners')]
-    public function partners(): Response
+    public function partners(PartnerRepository $partner): Response
     {
-        return $this->render('front/display/partners.html.twig');
+        $partners = $partner->findAll();
+        
+        return $this->render('front/display/partners.html.twig', [
+            'partners' => $partners
+        ]);
     }
     
 }

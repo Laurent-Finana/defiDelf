@@ -16,6 +16,10 @@
                                 <a href="{{ path('app_admin_planning_index') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_admin_planning_index') %} text-white border-top border-white {% endif %}" aria-expanded="false">Planning DELF
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ path('app_admin_partner_index') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_admin_partner_index') %} text-white border-top border-white {% endif %}" aria-expanded="false">Partenaires
+                                </a>
+                            </li>
                             <li class="nav-item"><a href="{{ path('app_admin_user_index') }}" class="nav-link {% if (app.request.attributes.get('_route') == 'app_admin_user_index') %} text-white border-top border-white {% endif %}">Utilisateurs</a></li>
                         {% endif %}
                     </ul>
