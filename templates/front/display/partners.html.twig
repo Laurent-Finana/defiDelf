@@ -10,33 +10,16 @@
 			<div class="mt-5 pt-5">
 				<h1 class="fw-bold text-center">Ils nous soutiennent</h1>
                 <div class="mt-5">
-                    <div class="row gy-4 mb-4">
-                        <div class="col-12 col-lg-3">
-                            <img src="{{ asset('assets/logosPartenaires/1Urca.jpg')}}" class="w-100" alt="">
-                        </div>
-                        <div class="col-12 col-lg-3">
-                            <img src="{{ asset('assets/logosPartenaires/2Inspe.png')}}" class="mt-lg-5 d-block mx-auto" width="350" alt="">
-                        </div>
-                        <div class="col-12 col-lg-3">
-                            <img src="{{ asset('assets/logosPartenaires/3Prefet.png')}}" class="w-75 d-block mx-auto" alt="">
-                        </div>
-                        <div class="col-12 col-lg-3">
-                            <img src="{{ asset('assets/logosPartenaires/4Agir.png')}}" class="d-block mx-auto ms-lg-0" width="181" alt="">
-                        </div>
-                        <div class="col-12 col-lg-3">
-                            <img src="{{ asset('assets/logosPartenaires/5Ligue.png')}}" class="w-75 d-block mx-auto" alt="">
-                        </div>
-                        <div class="col-12 col-lg-3">
-                            <img src="{{ asset('assets/logosPartenaires/6Yschools.png')}}" class="w-75 d-block mx-auto" alt="">
-                        </div>
-                        <div class="col-12 col-lg-3">
-                            <img src="{{ asset('assets/logosPartenaires/troyes_chante.png')}}" class="w-75 d-block mx-auto" alt="">
-                        </div>
+                    <div class="row gy-4 mb-4 d-flex align-items-center">
+                        {% for partner in partners %}
+                            <div class="col-12 col-lg-3">
+                                <img src="{{ vich_uploader_asset(partner, 'thumbnailFile') }}" class="w-75 d-block mx-auto" alt="Logo du partenaire">
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
 		</section>
-
-		</main>
+	</main>
 
 	{% endblock %}
