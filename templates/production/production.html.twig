@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Production écrite{% endblock %}
+
+{% block body %}
+<main>
+    <div class="container-fluid mt-5 pt-5">
+        <h1 class="mt-5 pt-5 fw-bold text-center">Production écrite</h1>
+
+        {{ form_start(form) }}
+				<div class="row gy-md-2 my-4 w-50 mx-auto">
+					<div class="col-12 col-lg-6">
+						{{ form_row(form.lastname) }}
+					</div>
+					<div class="col-12 col-lg-6">
+						{{ form_row(form.firstname) }}
+					</div>
+                    <div class="col-12">
+						{{ form_row(form.email) }}
+					</div>
+					<div class="col-12">
+						{{ form_row(form.text) }}
+					</div>
+				</div>
+			{{ form_end(form) }}
+
+    </div>
+</main>
+{% endblock %}
