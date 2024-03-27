@@ -60,7 +60,7 @@ class PracticeType extends AbstractType
                 'label' => 'Niveau (Veuillez choisir 2 niveaux maximum)',
                 'choices' => [
                     'Delf A1' => 'Delf A1',
-                    'Delf A2' => 'Delf A2',
+                    /* 'Delf A2' => 'Delf A2', */
                     'Delf B1' => 'Delf B1',
                     'Delf B2' => 'Delf B2'
                 ],
