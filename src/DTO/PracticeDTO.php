@@ -42,6 +42,9 @@ class PracticeDTO
     #[Assert\Length(max: 200)]
     public string $city = '';
 
+    #[Assert\NotBlank([],'Merci d\'entrer une date')]
+    public ?\DateTimeImmutable $entryDate = null;
+
     #[Assert\Count(min: 1, max: 2, minMessage: 'Vous devez sélectionner au moins 1 compétence', maxMessage: 'Vous ne pouvez pas sélectionner plus de 2 compétences')]
     public array $level = [];
 }

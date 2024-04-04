@@ -11,6 +11,7 @@
     <li>Complément d'adresse : {{data.add_on_address}}</li>
     <li>Code Postal : {{data.postal_code}}</li>
     <li>Ville : {{data.city}}</li>
+    <li>Date d'entrée en France : {{data.entryDate|date('d-m-Y')}}</li>
     {% for choice in data.level %} 
         <li>Niveau : {{choice}}</li>
     {% endfor %}
