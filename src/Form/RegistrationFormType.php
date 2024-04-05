@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -30,13 +31,23 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('email', EmailType::class, [
                 'label' => 'Email(*)',
-                'empty_data' => ''
+                'empty_data' => '',
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Merci d\'entrer votre email',
+                    ]),
+                ]
             ])
-            ->add('phone_number', TextType::class, [
+            ->add('phone_number', TelType::class, [
                 'label' => 'Téléphone(*)',
-                'empty_data' => ''
+                'empty_data' => '',
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Merci d\'entrer un numéro de téléphone',
+                    ]),
+                ]
             ])
-            ->add('whatsApp', TextType::class, [
+            ->add('whatsApp', TelType::class, [
                 'label' => 'WhatsApp',
                 'empty_data' => ''
             ])

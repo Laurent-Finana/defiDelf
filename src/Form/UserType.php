@@ -55,7 +55,7 @@ class UserType extends AbstractType
                         ],
                         'constraints' => [
                             new Regex(
-                                '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*\-+_\.]).{8,}$/',
+                                '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*\-+_\.\/]).{8,}$/',
                                 "Le mot de passe doit contenir au minimum 8 caractères, une majuscule, un chiffre et un caractère spécial"
                             ),
                         ],
@@ -74,7 +74,7 @@ class UserType extends AbstractType
                                 'message' => 'Merci d\'entrer un mot de passe',
                             ]),
                             new Regex(
-                                '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*\-+_\.]).{8,}$/',
+                                '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*\-+_\.\/]).{8,}$/',
                                 "Le mot de passe doit contenir au minimum 8 caractères, une majuscule, un chiffre et un caractère spécial"
                             ),
                             new Length([

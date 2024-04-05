@@ -6,6 +6,7 @@ use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
@@ -33,6 +34,9 @@ class User1Type extends AbstractType
                 if ($user->getId() !== null) {
                     $form->add('password', PasswordType::class, [
                         'label' => 'Mot de passe',
+                        'toggle' => true,
+                        'hidden_label' => 'Masquer',
+                        'visible_label' => 'Afficher',
                         'mapped' => false,
                         'attr' => [
                             'placeholder' => 'Laisser vide si inchangé'
@@ -43,9 +47,6 @@ class User1Type extends AbstractType
                                 "Le mot de passe doit contenir au minimum 8 caractères, une majuscule, un chiffre et un caractère spécial"
                             ),
                         ],
-                        'toggle' => true,
-                        'hidden_label' => 'Masquer',
-                        'visible_label' => 'Afficher',
                     ]);
                 } 
             })
@@ -57,11 +58,11 @@ class User1Type extends AbstractType
                 'empty_data' => '',
                 'label' => 'Prénom'
             ])
-            ->add('phone_number', TextType::class, [
+            ->add('phone_number', TelType::class, [
                 'empty_data' => '',
                 'label' => 'Téléphone'
             ])
-            ->add('whatsApp', TextType::class, [
+            ->add('whatsApp', TelType::class, [
                 'empty_data' => '',
                 'label' => 'WhatsApp'
             ])
