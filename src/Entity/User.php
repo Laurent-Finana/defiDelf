@@ -19,7 +19,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 180, unique: true)]
-    #[Assert\NotBlank]
+    #[Assert\NotBlank([], 'Merci d\'indiquer votre email')]
     private ?string $email = null;
 
     #[ORM\Column]
@@ -27,21 +27,21 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column]
     #[Assert\Regex(
-        pattern: '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-+]).{8,}$/',
+        pattern: '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[_\W]).{8,}$/',
         message: 'Le mot de passe doit contenir au minimum 8 caractères, une majuscule, un chiffre et un caractère spécial',
     )]
     private ?string $password = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank]
+    #[Assert\NotBlank([], 'Merci d\'indiquer votre nom')]
     private ?string $lastname = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank]
+    #[Assert\NotBlank([], 'Merci d\'indiquer votre prénom')]
     private ?string $firstname = null;
 
     #[ORM\Column(length: 64)]
-    #[Assert\NotBlank]
+    #[Assert\NotBlank([], 'Merci d\'indiquer votre numéro de téléphone')]
     private ?string $phone_number = null;
 
     #[ORM\Column(length: 64, nullable: true)]

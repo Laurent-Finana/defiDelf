@@ -32,20 +32,10 @@ class RegistrationFormType extends AbstractType
             ->add('email', EmailType::class, [
                 'label' => 'Email(*)',
                 'empty_data' => '',
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Merci d\'entrer votre email',
-                    ]),
-                ]
             ])
             ->add('phone_number', TelType::class, [
                 'label' => 'Téléphone(*)',
                 'empty_data' => '',
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Merci d\'entrer un numéro de téléphone',
-                    ]),
-                ]
             ])
             ->add('whatsApp', TelType::class, [
                 'label' => 'WhatsApp',
@@ -80,7 +70,7 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Merci d\'entrer un mot de passe',
                     ]),
                     new Regex(
-                        '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*\-+_\.\/]).{8,}$/',
+                        '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[_\W]).{8,}$/',
                         "Le mot de passe doit contenir au minimum 8 caractères, une majuscule, un chiffre et un caractère spécial"
                     ),
                     new Length([
