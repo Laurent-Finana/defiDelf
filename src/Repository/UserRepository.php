@@ -32,7 +32,8 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
     public function paginateUsers(int $page): PaginationInterface
     {
         return $this->paginator->paginate(
-            $this->createQueryBuilder('u'),
+            $this->createQueryBuilder('u')
+            ->orderBy('u.id', 'DESC'),
             $page,
             10
         );

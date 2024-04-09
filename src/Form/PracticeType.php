@@ -66,7 +66,7 @@ class PracticeType extends AbstractType
                 'choices' => [
                     'Delf A1' => 'Delf A1',
                     /* 'Delf A2' => 'Delf A2', */
-                    'Delf B1' => 'Delf B1',
+                    /* 'Delf B1' => 'Delf B1', */
                     'Delf B2' => 'Delf B2'
                 ],
                 'multiple' => true,

@@ -27,8 +27,7 @@ class ArticleRepository extends ServiceEntityRepository
     {
         return $this->paginator->paginate(
             $this->createQueryBuilder('a')
-            ->orderBy('a.id', 'DESC')
-            ,
+            ->orderBy('a.id', 'DESC'),
             $page,
             10
         );
