@@ -67,17 +67,18 @@ class PracticeType extends AbstractType
                     'Débutant : A1 - A2' => 'Débutant A1 - A2',
                     /* 'Delf A2' => 'Delf A2', */
                     /* 'Delf B1' => 'Delf B1', */
-                    'Avancé : B1 - B2' => 'Avancé B1 - B2'
+                    'Avancé : B1 - B2' => 'Avancé B1 - B2',
+                    'Je ne sais pas' => 'Ne sait pas'
                 ],
                 'multiple' => true,
                 'expanded' => true,
-                'attr' => ['class' => 'text-info fw-bold'],
+                'attr' => ['class' => 'text-info fw-bold mb-2'],
                 'label_attr' => [
                     'class' => 'checkbox-inline form-check-inline',
                 ]
             ])
             ->add('save', SubmitType::class, [
-                'label' => 'Envoyer'
+                'label' => 'Envoyer',
             ])
         ;
     }
