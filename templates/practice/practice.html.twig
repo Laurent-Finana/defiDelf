@@ -12,9 +12,9 @@
                     {{ include('_partials/_flash_messages.html.twig') }}
                 </div>
 
-                <h1 class="mt-4 pt-4 fw-bold text-center">Sessions d'entraînement au DELF</h1>
+                <h1 class="mt-4 pt-4 fw-bold text-center">Ateliers d'entraînement au DELF</h1>
 
-                <div class="mt-5 d-flex justify-content-center">
+                {# <div class="mt-5 d-flex justify-content-center">
                     <ul class="border border-primary rounded-5 p-4">
                         {% for date in dates %}
                             <li><strong class="text-success">DELF A1</strong> : {{ date.DelfA1 }}</li>
@@ -23,7 +23,7 @@
                             <li><strong class="text-success">DELF B2</strong> : {{ date.DelfB2 }}</li>
                         {% endfor %}
                     </ul>
-                </div>
+                </div> #}
 
                 <div class="row mt-5 mb-2">
                     <div class="col-12 col-md-8">
@@ -109,12 +109,12 @@
                 <div class="row pt-3 pb-5">
                     <div class="col-12 col-md-5 d-flex flex-column justify-content-between">
                         <div>
-                            <h1 id="inscription" class="fw-bold text-center text-success">Inscription aux sessions d'entraînement sur deux compétences du DELF (compréhension orale et écrite)</h1>
-                            <p class="mt-4 text-center">Pour participer aux sessions d'entraînement du DELF, merci de bien vouloir remplir ce formulaire.
+                            <h1 id="inscription" class="fw-bold text-center text-success">Demande d’inscription aux cours de FLE – Français Langue Étrangère</h1>
+                            <p class="mt-4 text-center">Pour demander à participer aux cours, merci de bien vouloir remplir ce formulaire.
                                 <br>Nous reviendrons vers vous pour confirmation.
                             </p>
                         </div>
-                        <div class="mt-4">
+                        {# <div class="mt-4">
                             <h5 class="text-danger text-center">Rappel des dates</h5>
                             <ul class="border border-primary rounded-5 p-4">
                                 {% for date in dates %}
@@ -124,7 +124,7 @@
                                     <li><strong class="text-info">DELF B2</strong> : <strong class="text-secondary">{{ date.DelfB2 }}</strong></li>
                                 {% endfor %}
                             </ul>
-                        </div>
+                        </div> #}
                     </div>
 
                     {# FORMULAIRE D'INSCRIPTION #}
