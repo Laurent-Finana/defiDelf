@@ -47,4 +47,7 @@ class PracticeDTO
 
     #[Assert\Count(min: 1, minMessage: 'Vous devez choisir au moins une option')]
     public array $level = [];
+
+    #[Assert\Length(min: 3, max: 2048)]
+    public string $message = '';
 }

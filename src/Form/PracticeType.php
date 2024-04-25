@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -76,6 +77,11 @@ class PracticeType extends AbstractType
                 'label_attr' => [
                     'class' => 'checkbox-inline form-check-inline',
                 ]
+            ])
+            ->add('message', TextareaType::class, [
+                'label' => 'Laissez-nous un message si nécessaire (facultatif)',
+                'attr' => ['style' => 'height:150px'],
+                'empty_data' => ''
             ])
             ->add('save', SubmitType::class, [
                 'label' => 'Envoyer',
