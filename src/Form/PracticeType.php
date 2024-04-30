@@ -65,11 +65,10 @@ class PracticeType extends AbstractType
                 'empty_data' => [],
                 'label' => 'Choisir le niveau désiré',
                 'choices' => [
-                    'Débutant : A1 - A2' => 'Débutant A1 - A2',
-                    /* 'Delf A2' => 'Delf A2', */
-                    /* 'Delf B1' => 'Delf B1', */
-                    'Avancé : B1 - B2' => 'Avancé B1 - B2',
-                    'Je ne sais pas' => 'Ne sait pas'
+                    'Delf A1' => 'Delf A1',
+                    'Delf A2' => 'Delf A2', 
+                    'Delf B1' => 'Delf B1', 
+                    'Delf B2' => 'Delf B2'
                 ],
                 'multiple' => true,
                 'expanded' => true,

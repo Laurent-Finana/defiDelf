@@ -115,8 +115,9 @@
                                 <br>Nous reviendrons vers vous pour confirmation.
                             </p>
                         </div>
-                        {# <div class="mt-4">
-                            <h5 class="text-danger text-center">Rappel des dates</h5>
+                        <div>
+                            <h5 class="text-danger text-center fw-bold mt-5">Pas de dates disponibles pour l'instant</h5>
+                            {# <h5 class="text-danger text-center">Rappel des dates</h5>
                             <ul class="border border-primary rounded-5 p-4">
                                 {% for date in dates %}
                                     <li><strong class="text-info">DELF A1</strong> : <strong class="text-secondary">{{ date.DelfA1 }}</strong></li>
@@ -124,8 +125,8 @@
                                     <li><strong class="text-info">DELF B1</strong> : <strong class="text-secondary">{{ date.DelfB1 }}</strong></li>
                                     <li><strong class="text-info">DELF B2</strong> : <strong class="text-secondary">{{ date.DelfB2 }}</strong></li>
                                 {% endfor %}
-                            </ul>
-                        </div> #}
+                            </ul> #}
+                        </div>
                     </div>
 
                     {# FORMULAIRE D'INSCRIPTION #}
@@ -167,6 +168,7 @@
                             </div>
                             <div>
                                 {{ form_row(form.level) }}
+                                <p class="mt-0 text-danger fw-bold">Pas de dates disponibles pour l'instant</p>
                                 {# <p class="mt-0">Participation : <span class="text-decoration-underline">10 euros</span> donnant droit à <span class="text-decoration-underline ">deux</span> sessions au choix (à régler sur place).</p> #}
                             </div>
                         </div>
