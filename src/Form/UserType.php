@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -95,6 +96,10 @@ class UserType extends AbstractType
                 'empty_data' => '',
                 'label' => 'Prénom'
             ])
+            ->add('birthDate', DateType::class, [
+                'label' => 'Date de naissance',
+                'widget' => 'single_text'
+            ])
             ->add('phone_number', TextType::class, [
                 'empty_data' => '',
                 'label' => 'Téléphone'
@@ -110,6 +115,10 @@ class UserType extends AbstractType
             ->add('job', TextType::class, [
                 'empty_data' => '',
                 'label' => 'Profession'
+            ])
+            ->add('entryDate', DateType::class, [
+                'label' => 'Date d\'entrée en France',
+                'widget' => 'single_text'
             ])
         ;
     }
