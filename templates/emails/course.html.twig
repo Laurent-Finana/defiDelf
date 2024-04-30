@@ -1,0 +1,13 @@
+<p>Une nouvelle demande d'inscription aux cours de français a été reçue</p>
+
+<ul>
+    <li>Prénom : {{user.firstname}}</li>
+    <li>Nom : {{user.lastname}}</li>
+    <li>Email : {{user.email}}</li>
+    <li>Date de naissance : {{user.birthDate|date('d-m-Y')}}</li>
+    <li>Téléphone 1 : {{user.phoneNumber}}</li>
+    <li>Téléphone 2 : {{user.whatsApp}}</li>
+    <li>Nationalité : {{user.nationality}}</li>
+    <li>Profession : {{user.job}}</li>
+    <li>Date d'entrée en France : {{user.entryDate|date('d-m-Y')}}</li>
+</ul>

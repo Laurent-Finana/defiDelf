@@ -6,7 +6,12 @@
 {% block body %}
 <main>
 	<div class="container w-50 mt-5 pt-5">
-		<h1 class="mt-5 mb-4 pt-5 text-center fw-bold">Inscription</h1>
+
+        <div class="mt-4 pt-4 text-center">
+			{{ include('_partials/_flash_messages.html.twig') }}
+		</div>
+
+		<h1 class="mb-4 pt-5 text-center fw-bold">Inscription</h1>
 
         {{ form_errors(registrationForm) }}
 
@@ -18,8 +23,11 @@
             <div class="col-6">
                 {{ form_row(registrationForm.firstname) }}
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 {{ form_row(registrationForm.email) }}
+            </div>
+            <div class="col-6">
+                {{ form_row(registrationForm.birthDate) }}
             </div>
             <div class="col-6">
                 {{ form_row(registrationForm.phone_number) }}
@@ -35,6 +43,9 @@
             </div>
             <div class="col-6">
                 {{ form_row(registrationForm.job) }}
+            </div>
+            <div class="col-12">
+                {{ form_row(registrationForm.entryDate) }}
             </div>
             <p class="text-danger">(*) champs obligatoires</p>
         </div>

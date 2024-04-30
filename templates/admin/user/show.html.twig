@@ -22,6 +22,10 @@
                     <td>{{ user.firstname }}</td>
                 </tr>
                 <tr>
+                    <th>Date de naissance</th>
+                    <td>{{ user.birthDate | date('d-m-Y')}}</td>
+                </tr>
+                <tr>
                     <th>Rôles</th>
                     <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
                 </tr>
@@ -40,6 +44,10 @@
                 <tr>
                     <th>Profession</th>
                     <td>{{ user.job }}</td>
+                </tr>
+                <tr>
+                    <th>Date d'entrée en France</th>
+                    <td>{{ user.entryDate | date('d-m-Y') }}</td>
                 </tr>
             </tbody>
         </table>

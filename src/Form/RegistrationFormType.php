@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
@@ -32,6 +33,16 @@ class RegistrationFormType extends AbstractType
             ->add('email', EmailType::class, [
                 'label' => 'Email(*)',
                 'empty_data' => '',
+            ])
+            ->add('birthDate', DateType::class, [
+                'label' => 'Date de naissance',
+                'widget' => 'single_text',
+                'empty_data' => date('now'),
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Merci d\'entrer votre date de naissance' 
+                    ])
+                ]
             ])
             ->add('phone_number', TelType::class, [
                 'label' => 'Téléphone(*)',
@@ -87,6 +98,11 @@ class RegistrationFormType extends AbstractType
                 'label' => 'Profession',
                 'empty_data' => '',
                 'required' => false
+            ])
+            ->add('entryDate', DateType::class, [
+                'label' => 'Date d\'entrée en France',
+                'widget' => 'single_text',
+                'empty_data' => date('now')
             ])
             ->add('save', SubmitType::class, [
                 'label' => 'S\'enregistrer',
