@@ -65,6 +65,10 @@
                     <th>Date d'entrée en France</th>
                     <td>{{ user.entryDate | date('d-m-Y') }}</td>
                 </tr>
+                <tr>
+                    <th>Activité salariée</th>
+                    <td>{{ user.employed ? 'oui' : 'non' }}</td>
+                </tr>
             </tbody>
         </table>
 

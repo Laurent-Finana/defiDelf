@@ -122,6 +122,16 @@ class RegistrationFormType extends AbstractType
                 'widget' => 'single_text',
                 'empty_data' => date('now')
             ])
+            ->add('employed', ChoiceType::class, [
+                'label' => 'Avez-vous un emploi salarié actuellement ?',
+                'empty_data' => 'non',
+                'choices' => [
+                    'oui' => true,
+                    'non' => false
+                ],
+                'multiple' => false,
+                'expanded' => true
+            ])
             ->add('save', SubmitType::class, [
                 'label' => 'S\'enregistrer',
                 'attr' => ['class' => 'd-block mx-auto btn-primary']

@@ -137,6 +137,15 @@ class UserType extends AbstractType
                 'label' => 'Date d\'entrée en France',
                 'widget' => 'single_text'
             ])
+            ->add('employed', ChoiceType::class, [
+                'label' => 'Actuellement salarié ?',
+                'choices' => [
+                    'oui' => true,
+                    'non' => false
+                ],
+                'multiple' => false,
+                'expanded' => true
+            ])
         ;
     }
 

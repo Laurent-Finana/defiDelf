@@ -17,14 +17,12 @@
             <thead>
                 <tr>
                     <th>Actions</th>
-                    <th>Email</th>
-                    <th>Nom</th>
-                    <th>Prénom</th>
-                    <th>Rôles</th>
-                    <th>Téléphone</th>
-                    <th>WhatsApp</th>
-                    <th>Nationalité</th>
-                    <th>Profession</th>     
+                    <th class="text-center">Email</th>
+                    <th class="text-center">Nom</th>
+                    <th class="text-center">Prénom</th>
+                    <th class="text-center">Rôles</th>
+                    <th class="text-center">Téléphone</th>
+                    <th class="text-center">Nationalité</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
@@ -39,9 +37,7 @@
                     <td class="text-center">{{ user.firstname }}</td>
                     <td class="text-center">{{ user.roles ? user.roles|json_encode : '' }}</td>
                     <td class="text-center">{{ user.phoneNumber }}</td>
-                    <td class="text-center">{{ user.whatsApp }}</td>
                     <td class="text-center">{{ user.nationality }}</td>
-                    <td class="text-center">{{ user.job }}</td>
                 </tr>
             {% else %}
                 <tr>

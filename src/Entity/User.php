@@ -77,6 +77,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Assert\NotBlank([],'Merci d\'entrer votre ville')]
     private ?string $city = null;
 
+    #[ORM\Column]
+    private ?bool $employed = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -287,6 +290,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setCity(string $city): static
     {
         $this->city = $city;
+
+        return $this;
+    }
+
+    public function isEmployed(): ?bool
+    {
+        return $this->employed;
+    }
+
+    public function setEmployed(bool $employed): static
+    {
+        $this->employed = $employed;
 
         return $this;
     }
