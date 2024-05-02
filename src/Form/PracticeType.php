@@ -63,12 +63,18 @@ class PracticeType extends AbstractType
             ])
             ->add('level', ChoiceType::class, [
                 'empty_data' => [],
-                'label' => 'Choisir le niveau désiré',
+                'label' => 'Choisir le niveau désiré (2 niveaux maximum)',
                 'choices' => [
                     'Delf A1' => 'Delf A1',
                     'Delf A2' => 'Delf A2', 
                     'Delf B1' => 'Delf B1', 
                     'Delf B2' => 'Delf B2'
+                ],
+                'choice_attr' => [
+                    'Delf A1' => ['disabled' => true],
+                    'Delf A2' => ['disabled' => true],
+                    'Delf B1' => ['disabled' => true],
+                    'Delf B2' => ['disabled' => true]
                 ],
                 'multiple' => true,
                 'expanded' => true,

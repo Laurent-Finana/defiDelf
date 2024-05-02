@@ -41,7 +41,7 @@ class RegistrationController extends AbstractController
                 ->to('contact@defidelf.org')
                 ->from($user->getEmail())
                 ->subject('Demande d\'inscription aux cours de français')
-                ->htmlTemplate('emails/course.html.twig')
+                ->htmlTemplate('emails/registration.html.twig')
                 ->context(['user' => $user]);
 
             $mailer->send($mail);

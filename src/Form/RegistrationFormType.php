@@ -4,6 +4,8 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -35,7 +37,7 @@ class RegistrationFormType extends AbstractType
                 'empty_data' => '',
             ])
             ->add('birthDate', DateType::class, [
-                'label' => 'Date de naissance',
+                'label' => 'Date de naissance(*)',
                 'widget' => 'single_text',
                 'empty_data' => date('now'),
                 'constraints' => [
@@ -89,8 +91,24 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+            ->add('address', TextType::class, [
+                'empty_data' => '',
+                'label' => 'Adresse(*)'
+            ])
+            ->add('add_on_address', TextType::class, [
+                'empty_data' => '',
+                'label' => 'Complément d\'adresse',
+            ])
+            ->add('postal_code', TextType::class, [
+                'empty_data' => '',
+                'label' => 'Code postal(*)'
+            ])
+            ->add('city', TextType::class, [
+                'empty_data' => '',
+                'label' => 'Ville(*)'
+            ])
             ->add('nationality', TextType::class, [
-                'label' => 'Nationalité',
+                'label' => 'Nationalité(*)',
                 'empty_data' => '',
                 'required' => false
             ])
@@ -100,7 +118,7 @@ class RegistrationFormType extends AbstractType
                 'required' => false
             ])
             ->add('entryDate', DateType::class, [
-                'label' => 'Date d\'entrée en France',
+                'label' => 'Date d\'entrée en France(*)',
                 'widget' => 'single_text',
                 'empty_data' => date('now')
             ])

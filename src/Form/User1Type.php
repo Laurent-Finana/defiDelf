@@ -64,6 +64,22 @@ class User1Type extends AbstractType
                 'empty_data' => '',
                 'label' => 'WhatsApp'
             ])
+            ->add('address', TextType::class, [
+                'empty_data' => '',
+                'label' => 'Adresse'
+            ])
+            ->add('add_on_address', TextType::class, [
+                'empty_data' => '',
+                'label' => 'Complément d\'adresse',
+            ])
+            ->add('postal_code', TextType::class, [
+                'empty_data' => '',
+                'label' => 'Code postal'
+            ])
+            ->add('city', TextType::class, [
+                'empty_data' => '',
+                'label' => 'Ville'
+            ])
             ->add('nationality', TextType::class, [
                 'empty_data' => '',
                 'label' => 'Nationalité'

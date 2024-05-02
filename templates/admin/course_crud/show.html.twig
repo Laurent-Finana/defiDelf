@@ -29,7 +29,9 @@
                 </tr>
                 <tr>
                     <th>Visible</th>
-                    <td>{{ course.active }}</td>
+                    <td><div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="switch{{ course.id }}" {{ course.active ? "checked" : "" }} disabled>
+						</div></td>
                 </tr>
                 <tr>
                     <th>Créé le</th>

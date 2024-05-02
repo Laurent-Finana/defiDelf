@@ -62,6 +62,21 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Assert\NotBlank([], 'Merci d\'indiquer votre date d\'entrée en France')]
     private ?\DateTimeInterface $entryDate = null;
 
+    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank([],'Merci d\'entrer votre adresse')]
+    private ?string $address = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $add_on_address = null;
+
+    #[ORM\Column(length: 50)]
+    #[Assert\NotBlank([],'Merci d\'entrer votre code postal')]
+    private ?string $postal_code = null;
+
+    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank([],'Merci d\'entrer votre ville')]
+    private ?string $city = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -227,4 +242,53 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    public function getAddress(): ?string
+    {
+        return $this->address;
+    }
+
+    public function setAddress(string $address): static
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    public function getAddOnAddress(): ?string
+    {
+        return $this->add_on_address;
+    }
+
+    public function setAddOnAddress(?string $add_on_address): static
+    {
+        $this->add_on_address = $add_on_address;
+
+        return $this;
+    }
+
+    public function getPostalCode(): ?string
+    {
+        return $this->postal_code;
+    }
+
+    public function setPostalCode(string $postal_code): static
+    {
+        $this->postal_code = $postal_code;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(string $city): static
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
 }
