@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
@@ -12,6 +13,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Regex;
 
 class User1Type extends AbstractType
@@ -56,6 +58,16 @@ class User1Type extends AbstractType
                 'empty_data' => '',
                 'label' => 'Prénom'
             ])
+            ->add('birthDate', DateType::class, [
+                'label' => 'Date de naissance(*)',
+                'widget' => 'single_text',
+                'empty_data' => date('now'),
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Merci d\'entrer votre date de naissance' 
+                    ])
+                ]
+            ])
             ->add('phone_number', TelType::class, [
                 'empty_data' => '',
                 'label' => 'Téléphone'
@@ -87,6 +99,11 @@ class User1Type extends AbstractType
             ->add('job', TextType::class, [
                 'empty_data' => '',
                 'label' => 'Profession'
+            ])
+            ->add('entryDate', DateType::class, [
+                'label' => 'Date d\'entrée en France',
+                'widget' => 'single_text',
+                'empty_data' => date('now')
             ])
         ;
     }
