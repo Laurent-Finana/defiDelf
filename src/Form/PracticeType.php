@@ -70,12 +70,12 @@ class PracticeType extends AbstractType
                     'Delf B1' => 'Delf B1', 
                     'Delf B2' => 'Delf B2'
                 ],
-                'choice_attr' => [
+                /* 'choice_attr' => [
                     'Delf A1' => ['disabled' => true],
                     'Delf A2' => ['disabled' => true],
                     'Delf B1' => ['disabled' => true],
                     'Delf B2' => ['disabled' => true]
-                ],
+                ], */
                 'multiple' => true,
                 'expanded' => true,
                 'attr' => ['class' => 'text-info fw-bold mb-2'],
